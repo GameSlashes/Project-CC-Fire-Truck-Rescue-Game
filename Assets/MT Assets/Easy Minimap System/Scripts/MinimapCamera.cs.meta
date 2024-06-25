@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a9f944f29d4e9e147bb25cdab717b02b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - renderTexture: {fileID: 8400000, guid: 40938da3901f65d498ac3f7582679965, type: 2}
+  - customGameObjectToFollowRotation: {instanceID: 0}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: bf95c08f798e1b844b99f6fa3b9fa58e, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
