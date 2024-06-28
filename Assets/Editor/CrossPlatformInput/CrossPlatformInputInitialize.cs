@@ -4,7 +4,7 @@ using UnityEditor;
 
 namespace UnityStandardAssets.CrossPlatformInput.Inspector
 {
-    //[InitializeOnLoad]
+    [InitializeOnLoad]
     public class CrossPlatformInitialize
     {
         // Custom compiler defines:

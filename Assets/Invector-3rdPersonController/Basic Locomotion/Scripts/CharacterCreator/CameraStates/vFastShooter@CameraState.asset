@@ -90,7 +90,7 @@ MonoBehaviour:
   - Name: Aiming
     forward: -1
     right: 0.4
-    defaultDistance: 2
+    defaultDistance: 2.03
     maxDistance: 3
     minDistance: 0.5
     height: 1.5

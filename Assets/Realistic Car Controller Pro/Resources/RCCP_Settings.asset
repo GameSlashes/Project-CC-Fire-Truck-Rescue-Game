@@ -21,7 +21,7 @@ MonoBehaviour:
   autoSyncTransforms: 1
   maxAngularVelocity: 8
   maxFPS: -1
-  overrideBehavior: 0
+  overrideBehavior: 1
   behaviorTypes:
   - behaviorName: Balanced
     ABS: 1
@@ -335,9 +335,9 @@ MonoBehaviour:
   useTelemetry: 0
   useInputDebugger: 0
   useNewInputSystem: 1
-  autoSaveLoadInputRebind: 0
+  autoSaveLoadInputRebind: 1
   mobileController: 0
-  mobileControllerEnabled: 1
+  mobileControllerEnabled: 0
   gyroSensitivity: 2.5
   setLayers: 1
   RCCPLayer: RCCP_Vehicle
