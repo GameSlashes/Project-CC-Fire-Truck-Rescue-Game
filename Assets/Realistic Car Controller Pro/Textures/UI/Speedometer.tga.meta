@@ -3,7 +3,7 @@ guid: 1b6dca7e63f65ad4db4657162fe75598
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -102,14 +103,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 32
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 53
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -234,31 +235,31 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Export_9: -220326644
-      Export_17: 283238774
-      Export_23: 1013747165
-      Export_19: 403582100
-      Export_14: -1008429569
-      Export_8: 1381844698
-      Export_2: -323044320
-      Export_16: -2028541245
-      Export_11: 1815202896
-      Export_6: -1643849309
-      Export_10: -1265806852
-      Export_13: -2138478971
-      Export_18: 1681538260
-      Export_4: -1532863876
-      Export_24: 370373659
-      Export_15: 1111073256
-      Export_22: -2104662826
-      Export_5: -970349189
-      Export_3: -1096076048
-      Export_7: -1893439117
       Export_0: -1265723112
-      Export_21: -1349775658
-      Export_12: -1752651691
       Export_1: -1980800481
+      Export_10: -1265806852
+      Export_11: 1815202896
+      Export_12: -1752651691
+      Export_13: -2138478971
+      Export_14: -1008429569
+      Export_15: 1111073256
+      Export_16: -2028541245
+      Export_17: 283238774
+      Export_18: 1681538260
+      Export_19: 403582100
+      Export_2: -323044320
       Export_20: -889020906
+      Export_21: -1349775658
+      Export_22: -2104662826
+      Export_23: 1013747165
+      Export_24: 370373659
+      Export_3: -1096076048
+      Export_4: -1532863876
+      Export_5: -970349189
+      Export_6: -1643849309
+      Export_7: -1893439117
+      Export_8: 1381844698
+      Export_9: -220326644
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

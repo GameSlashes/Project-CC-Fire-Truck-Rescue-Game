@@ -17,7 +17,6 @@ public class LevelSelection : MonoBehaviour
     public int PlayableLevels = 6;
 
     [Header("UI Panels")]
-    public GameObject LoadingScreen;
     public GameObject LevelsPanel;
     public GameObject ModeSelection;
     public GameObject LevelSelections;
@@ -38,7 +37,6 @@ public class LevelSelection : MonoBehaviour
     {
         Time.timeScale = 1;
         AudioListener.pause = false;
-        LoadingScreen.SetActive(false);
         CacheButtons();
         LevelsInit();
         checkMode();
@@ -105,14 +103,12 @@ public class LevelSelection : MonoBehaviour
     public void PlayLevel(int level)
     {
         SaveData.Instance.CurrentLevel = level;
-        LoadingScreen.SetActive(true);
         SaveData.instance.showAd();
         LoadScene.SceneName = NextScene.ToString();
     }
 
     public void BackBtn()
     {
-        LoadingScreen.SetActive(true);
         SaveData.instance.showAd();
         LoadScene.SceneName = PreviousScene.ToString();
         //SceneManager.LoadScene(PreviousScene.ToString());
@@ -158,7 +154,6 @@ public class LevelSelection : MonoBehaviour
         else if(modeID == 2)
         {
             ModeSelection.SetActive(false);
-            LoadingScreen.SetActive(true);
             PlayLevel(0);
             PlayerPrefs.SetInt("Mode", 2);
         }
@@ -167,7 +162,6 @@ public class LevelSelection : MonoBehaviour
             if(PlayerPrefs.GetInt("UnlockMode3") == 2)
             {
                 ModeSelection.SetActive(false);
-                LoadingScreen.SetActive(true);
                 PlayLevel(0);
                 PlayerPrefs.SetInt("Mode", 2);
             }
@@ -182,7 +176,6 @@ public class LevelSelection : MonoBehaviour
             if(PlayerPrefs.GetInt("UnlockMode4") == 2)
             {
                 ModeSelection.SetActive(false);
-                LoadingScreen.SetActive(true);
                 PlayLevel(0);
                 PlayerPrefs.SetInt("Mode", 4);
             }

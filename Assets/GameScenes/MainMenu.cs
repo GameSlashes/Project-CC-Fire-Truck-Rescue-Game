@@ -12,7 +12,6 @@ public class MainMenu : MonoBehaviour
     public GameObject SettingDialogue;
     public GameObject ExitDialogue;
     public GameObject Shop;
-    public GameObject LoadingScreen;
     public Text totalCoins;
 
     [Header("Settings")]
@@ -50,14 +49,12 @@ public class MainMenu : MonoBehaviour
         SettingDialogue.SetActive(false);
         ExitDialogue.SetActive(false);
         Shop.SetActive(false);
-        LoadingScreen.SetActive(false);
     }
 
     public void PlayBtn()
     {
         playBtnSound();
         showAds();
-        LoadingScreen.SetActive(true);
         SceneManager.LoadScene(NextScene.ToString());
     }
 

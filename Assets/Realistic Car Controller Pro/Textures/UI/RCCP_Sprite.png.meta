@@ -3,7 +3,7 @@ guid: 11e27d70b09d4fd49bd223ba150ba9b5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -102,14 +103,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 32
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 53
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -696,32 +697,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RCCP_Sprite_16: -12016100
-      RCCP_Sprite_8: 1928264642
       RCCP_Sprite_0: 798526962
+      RCCP_Sprite_1: -500179997
+      RCCP_Sprite_10: 827286579
       RCCP_Sprite_11: 673822871
+      RCCP_Sprite_12: 1344514516
+      RCCP_Sprite_13: 804485116
       RCCP_Sprite_14: -111595497
-      RCCP_Sprite_5: -1937643005
-      RCCP_Sprite_2: 350392693
-      RCCP_Sprite_9: 1504001133
+      RCCP_Sprite_15: 1763970147
+      RCCP_Sprite_16: -12016100
+      RCCP_Sprite_17: 60849353
       RCCP_Sprite_18: 470999742
+      RCCP_Sprite_19: -1765627763
+      RCCP_Sprite_2: 350392693
+      RCCP_Sprite_20: 164741496
+      RCCP_Sprite_21: 1916312986
+      RCCP_Sprite_22: -1097403403
       RCCP_Sprite_23: -1162138686
       RCCP_Sprite_24: -555222038
       RCCP_Sprite_25: 766597691
-      RCCP_Sprite_13: 804485116
-      RCCP_Sprite_7: 2123352702
-      RCCP_Sprite_10: 827286579
-      RCCP_Sprite_1: -500179997
-      RCCP_Sprite_19: -1765627763
-      RCCP_Sprite_15: 1763970147
-      RCCP_Sprite_21: 1916312986
-      RCCP_Sprite_22: -1097403403
-      RCCP_Sprite_17: 60849353
-      RCCP_Sprite_20: 164741496
-      RCCP_Sprite_6: -345863590
-      RCCP_Sprite_12: 1344514516
-      RCCP_Sprite_4: 688998807
       RCCP_Sprite_3: 337363593
+      RCCP_Sprite_4: 688998807
+      RCCP_Sprite_5: -1937643005
+      RCCP_Sprite_6: -345863590
+      RCCP_Sprite_7: 2123352702
+      RCCP_Sprite_8: 1928264642
+      RCCP_Sprite_9: 1504001133
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
