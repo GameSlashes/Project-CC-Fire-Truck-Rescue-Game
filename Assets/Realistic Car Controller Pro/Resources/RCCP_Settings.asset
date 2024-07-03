@@ -21,7 +21,7 @@ MonoBehaviour:
   autoSyncTransforms: 1
   maxAngularVelocity: 8
   maxFPS: -1
-  overrideBehavior: 1
+  overrideBehavior: 0
   behaviorTypes:
   - behaviorName: Balanced
     ABS: 1

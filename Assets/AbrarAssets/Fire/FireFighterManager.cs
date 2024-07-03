@@ -19,6 +19,7 @@ public class FireFighterManager : MonoBehaviour
 
     private float maxWaterCapacity = 100f; // Maximum water capacity
     private float currentWaterCapacity;
+    private bool isFirePipeActive = false;
 
     private void Start()
     {
@@ -35,7 +36,8 @@ public class FireFighterManager : MonoBehaviour
     {
         if (fireExtinguisherButton != null)
         {
-            fireExtinguisherButton.GetComponent<Button>().onClick.AddListener(() => SetPipeActive(!firePipe.activeSelf));
+            fireExtinguisherButton.GetComponent<Button>().onClick.AddListener(TogglePipeState);
+            //fireExtinguisherButton.GetComponent<Button>().onClick.AddListener(() => SetPipeActive(!firePipe.activeSelf));
             fireExtinguisherButton.SetActive(false); // Ensure the button is initially inactive
         }
         else
@@ -98,6 +100,12 @@ public class FireFighterManager : MonoBehaviour
         {
             Debug.LogWarning("Fire pipe or fire gun is not assigned.");
         }
+    }
+
+    public void TogglePipeState()
+    {
+        isFirePipeActive = !isFirePipeActive;
+        SetPipeActive(isFirePipeActive);
     }
 
     /// <summary>
