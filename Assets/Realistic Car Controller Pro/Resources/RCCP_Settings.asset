@@ -335,9 +335,9 @@ MonoBehaviour:
   useTelemetry: 0
   useInputDebugger: 0
   useNewInputSystem: 1
-  autoSaveLoadInputRebind: 1
+  autoSaveLoadInputRebind: 0
   mobileController: 0
-  mobileControllerEnabled: 0
+  mobileControllerEnabled: 1
   gyroSensitivity: 2.5
   setLayers: 1
   RCCPLayer: RCCP_Vehicle

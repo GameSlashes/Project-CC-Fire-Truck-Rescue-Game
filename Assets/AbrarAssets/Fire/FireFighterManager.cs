@@ -1,14 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FireFighterManager : MonoBehaviour
 {
+    public static FireFighterManager instance;
+
     [Header("Firefighting Equipment")]
     public GameObject fireGun; // The fire gun used by the firefighter
     public GameObject firePipe; // The fire pipe used for larger fires
     public GameObject water; // The water object for visual effects
+    public GameObject fireExtinguisherSpray; // The fire extinguisher spray object for visual effects
 
     [Header("UI Elements")]
     public GameObject fireExtinguisherButton; // Button for equipping the fire extinguisher
@@ -16,17 +18,30 @@ public class FireFighterManager : MonoBehaviour
     public Slider waterCapacitySlider; // Slider for water capacity
     public GameObject refillPanel; // Panel for refilling water
     public Button refillButton; // Button for refilling water
+    public Button fireExtinguisherSprayButton; // Button for toggling the fire extinguisher spray
+    public Slider fireExtinguisherCapacitySlider; // Slider for fire extinguisher capacity
+    public GameObject fireExtinguisherRefillPanel; // Panel for refilling fire extinguisher
+    public Button fireExtinguisherRefillButton; // Button for refilling fire extinguisher
+
+    [Header("Debugging")]
+    public bool debugMode; // Enable or disable debug logging
 
     private float maxWaterCapacity = 100f; // Maximum water capacity
     private float currentWaterCapacity;
+    private float maxFireExtinguisherCapacity = 100f; // Maximum fire extinguisher capacity
+    private float currentFireExtinguisherCapacity;
     private bool isFirePipeActive = false;
+    private bool isFireExtinguisherSprayActive = false;
 
-    private void Start()
+    public void Start()
     {
+        instance = this;
         InitializeUI();
         UpdateWaterButtonState();
         currentWaterCapacity = maxWaterCapacity; // Initialize the water capacity to maximum
         UpdateWaterSlider();
+        currentFireExtinguisherCapacity = maxFireExtinguisherCapacity; // Initialize the fire extinguisher capacity to maximum
+        UpdateFireExtinguisherSlider();
     }
 
     /// <summary>
@@ -36,13 +51,11 @@ public class FireFighterManager : MonoBehaviour
     {
         if (fireExtinguisherButton != null)
         {
-            fireExtinguisherButton.GetComponent<Button>().onClick.AddListener(TogglePipeState);
-            //fireExtinguisherButton.GetComponent<Button>().onClick.AddListener(() => SetPipeActive(!firePipe.activeSelf));
             fireExtinguisherButton.SetActive(false); // Ensure the button is initially inactive
         }
         else
         {
-            Debug.LogWarning("Fire extinguisher button is not assigned.");
+            if (debugMode) Debug.LogWarning("Fire extinguisher button is not assigned.");
         }
 
         if (waterButton != null)
@@ -51,7 +64,7 @@ public class FireFighterManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Water button is not assigned.");
+            if (debugMode) Debug.LogWarning("Water button is not assigned.");
         }
 
         if (waterCapacitySlider != null)
@@ -61,7 +74,7 @@ public class FireFighterManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Water capacity slider is not assigned.");
+            if (debugMode) Debug.LogWarning("Water capacity slider is not assigned.");
         }
 
         if (refillButton != null)
@@ -70,7 +83,7 @@ public class FireFighterManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Refill button is not assigned.");
+            if (debugMode) Debug.LogWarning("Refill button is not assigned.");
         }
 
         if (refillPanel != null)
@@ -79,7 +92,44 @@ public class FireFighterManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Refill panel is not assigned.");
+            if (debugMode) Debug.LogWarning("Refill panel is not assigned.");
+        }
+
+        if (fireExtinguisherSprayButton != null)
+        {
+            fireExtinguisherSprayButton.onClick.AddListener(() => ToggleFireExtinguisherSpray());
+        }
+        else
+        {
+            if (debugMode) Debug.LogWarning("Fire extinguisher spray button is not assigned.");
+        }
+
+        if (fireExtinguisherCapacitySlider != null)
+        {
+            fireExtinguisherCapacitySlider.maxValue = maxFireExtinguisherCapacity;
+            fireExtinguisherCapacitySlider.value = currentFireExtinguisherCapacity;
+        }
+        else
+        {
+            if (debugMode) Debug.LogWarning("Fire extinguisher capacity slider is not assigned.");
+        }
+
+        if (fireExtinguisherRefillButton != null)
+        {
+            fireExtinguisherRefillButton.onClick.AddListener(RefillFireExtinguisher);
+        }
+        else
+        {
+            if (debugMode) Debug.LogWarning("Fire extinguisher refill button is not assigned.");
+        }
+
+        if (fireExtinguisherRefillPanel != null)
+        {
+            fireExtinguisherRefillPanel.SetActive(false); // Ensure the panel is initially inactive
+        }
+        else
+        {
+            if (debugMode) Debug.LogWarning("Fire extinguisher refill panel is not assigned.");
         }
     }
 
@@ -93,18 +143,19 @@ public class FireFighterManager : MonoBehaviour
         {
             firePipe.SetActive(state);
             fireGun.SetActive(state); // Ensure the fire gun is the opposite state of the fire pipe
-            Debug.Log("Fire pipe state set to: " + state);
+            if (debugMode) Debug.Log("Fire pipe state set to: " + state);
             UpdateWaterButtonState();
         }
         else
         {
-            Debug.LogWarning("Fire pipe or fire gun is not assigned.");
+            if (debugMode) Debug.LogWarning("Fire pipe or fire gun is not assigned.");
         }
     }
 
     public void TogglePipeState()
     {
         isFirePipeActive = !isFirePipeActive;
+        if (debugMode) Debug.Log(isFirePipeActive);
         SetPipeActive(isFirePipeActive);
     }
 
@@ -120,7 +171,7 @@ public class FireFighterManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Water object is not assigned.");
+            if (debugMode) Debug.LogWarning("Water object is not assigned.");
             return false;
         }
     }
@@ -134,7 +185,7 @@ public class FireFighterManager : MonoBehaviour
         if (water != null)
         {
             water.SetActive(state);
-            Debug.Log("Water state set to: " + state);
+            if (debugMode) Debug.Log("Water state set to: " + state);
             if (state) // If activating water, reduce the capacity
             {
                 StartCoroutine(ConsumeWater());
@@ -142,7 +193,7 @@ public class FireFighterManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Water object is not assigned.");
+            if (debugMode) Debug.LogWarning("Water object is not assigned.");
         }
     }
 
@@ -159,7 +210,7 @@ public class FireFighterManager : MonoBehaviour
             {
                 SetWaterActive(false);
                 waterButton.SetActive(false);
-                Debug.Log("Water capacity reached zero. Deactivating water.");
+                if (debugMode) Debug.Log("Water capacity reached zero. Deactivating water.");
                 break;
             }
             yield return new WaitForSeconds(0.1f); // Adjust this value to control the update frequency
@@ -190,7 +241,7 @@ public class FireFighterManager : MonoBehaviour
     {
         currentWaterCapacity = maxWaterCapacity;
         UpdateWaterSlider();
-        Debug.Log("Water refilled to maximum capacity.");
+        if (debugMode) Debug.Log("Water refilled to maximum capacity.");
 
         // Hide the refill panel after refilling
         if (refillPanel != null)
@@ -223,7 +274,7 @@ public class FireFighterManager : MonoBehaviour
             if (fireExtinguisherButton != null)
             {
                 fireExtinguisherButton.SetActive(true);
-                Debug.Log("Fire extinguisher button activated.");
+                if (debugMode) Debug.Log("Fire extinguisher button activated.");
             }
         }
     }
@@ -239,8 +290,93 @@ public class FireFighterManager : MonoBehaviour
             if (fireExtinguisherButton != null)
             {
                 fireExtinguisherButton.SetActive(false);
-                Debug.Log("Fire extinguisher button deactivated.");
+                if (debugMode) Debug.Log("Fire extinguisher button deactivated.");
             }
+        }
+    }
+
+    /// <summary>
+    /// Toggle the fire extinguisher spray state.
+    /// </summary>
+    private void ToggleFireExtinguisherSpray()
+    {
+        isFireExtinguisherSprayActive = !isFireExtinguisherSprayActive;
+        SetFireExtinguisherSprayActive(isFireExtinguisherSprayActive);
+        fireExtinguisherCapacitySlider.gameObject.SetActive(isFireExtinguisherSprayActive);
+    }
+
+    /// <summary>
+    /// Activate or deactivate the fire extinguisher spray object.
+    /// </summary>
+    /// <param name="state">The desired state of the fire extinguisher spray (true for active, false for inactive).</param>
+    private void SetFireExtinguisherSprayActive(bool state)
+    {
+        if (fireExtinguisherSpray != null)
+        {
+            fireExtinguisherSpray.SetActive(state);
+            if (debugMode) Debug.Log("Fire extinguisher spray state set to: " + state);
+            if (state) // If activating the spray, reduce the capacity
+            {
+                StartCoroutine(ConsumeFireExtinguisher());
+            }
+        }
+        else
+        {
+            if (debugMode) Debug.LogWarning("Fire extinguisher spray object is not assigned.");
+        }
+    }
+
+    /// <summary>
+    /// Coroutine to consume fire extinguisher spray over time.
+    /// </summary>
+    private IEnumerator ConsumeFireExtinguisher()
+    {
+        while (isFireExtinguisherSprayActive && currentFireExtinguisherCapacity > 0)
+        {
+            currentFireExtinguisherCapacity -= 1f; // Adjust this value to control the spray consumption rate
+            UpdateFireExtinguisherSlider();
+            if (currentFireExtinguisherCapacity <= 0)
+            {
+                SetFireExtinguisherSprayActive(false);
+                fireExtinguisherSprayButton.gameObject.SetActive(false);
+                if (debugMode) Debug.Log("Fire extinguisher capacity reached zero. Deactivating spray.");
+                break;
+            }
+            yield return new WaitForSeconds(0.1f); // Adjust this value to control the update frequency
+        }
+
+        // Show the refill panel when fire extinguisher spray is depleted
+        if (fireExtinguisherRefillPanel != null && currentFireExtinguisherCapacity <= 0)
+        {
+            fireExtinguisherRefillPanel.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Update the fire extinguisher capacity slider to reflect the current capacity.
+    /// </summary>
+    private void UpdateFireExtinguisherSlider()
+    {
+        if (fireExtinguisherCapacitySlider != null)
+        {
+            fireExtinguisherCapacitySlider.value = currentFireExtinguisherCapacity;
+        }
+    }
+
+    /// <summary>
+    /// Refill the fire extinguisher capacity to the maximum.
+    /// </summary>
+    private void RefillFireExtinguisher()
+    {
+        currentFireExtinguisherCapacity = maxFireExtinguisherCapacity;
+        UpdateFireExtinguisherSlider();
+        if (debugMode) Debug.Log("Fire extinguisher refilled to maximum capacity.");
+
+        // Hide the refill panel after refilling
+        if (fireExtinguisherRefillPanel != null)
+        {
+            fireExtinguisherRefillPanel.SetActive(false);
+            fireExtinguisherSprayButton.gameObject.SetActive(true);
         }
     }
 }

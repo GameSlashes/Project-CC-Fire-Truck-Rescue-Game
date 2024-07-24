@@ -5402,7 +5402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 3
+  selectedToolbar: 5
   weaponCategory: Pistol
   _shootFrequency: 0.25
   isInfinityAmmo: 1
@@ -5599,7 +5599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37cb9a443aef1842ae80a6a984cbe35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openCloseEvents: 0
+  openCloseEvents: 1
   openCloseWindow: 0
   selectedToolbar: 0
   onEquip:
@@ -18790,7 +18790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3179818464066112297
 Transform:
   m_ObjectHideFlags: 0
