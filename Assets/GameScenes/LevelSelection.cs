@@ -41,11 +41,11 @@ public class LevelSelection : MonoBehaviour
         CacheButtons();
         LevelsInit();
         checkMode();
-        if (FindObjectOfType<Handler>())
-        {
-            FindObjectOfType<Handler>().Show_SmallBanner1();
-            FindObjectOfType<Handler>().Show_SmallBanner2();
-        }
+        //if (FindObjectOfType<Handler>())
+        //{
+        //    FindObjectOfType<Handler>().Show_SmallBanner1();
+        //    FindObjectOfType<Handler>().Show_SmallBanner2();
+        //}
 
     }
 

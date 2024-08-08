@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AdsManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2214116484807182947, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2214116484807183005, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -716,6 +720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GDPR
       objectReference: {fileID: 0}
+    - target: {fileID: 7736339131816110539, guid: 9ab4feffa4f4fd34b8621c8225e3067f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7736339131816110541, guid: 9ab4feffa4f4fd34b8621c8225e3067f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -900,6 +908,10 @@ PrefabInstance:
     - target: {fileID: 452265360047110727, guid: b3a5937b20bfcb444a18645148043959, type: 3}
       propertyPath: m_Name
       value: RateUs_Popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 452265360047110727, guid: b3a5937b20bfcb444a18645148043959, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a5937b20bfcb444a18645148043959, type: 3}

@@ -28,12 +28,12 @@ public class controllerDetection : MonoBehaviour
 
     public void getInBtn()
     {
-        if (FindObjectOfType<Handler>())
-        {
-            PlayerPrefs.SetInt("adShowMore", 5);
-            FindObjectOfType<Handler>().showWaitInterstitial();
-            PlayerPrefs.SetInt("loadInterstitialAD", 5);
-        }
+        //if (FindObjectOfType<Handler>())
+        //{
+        //    PlayerPrefs.SetInt("adShowMore", 5);
+        //    FindObjectOfType<Handler>().showWaitInterstitial();
+        //    PlayerPrefs.SetInt("loadInterstitialAD", 5);
+        //}
         if (SoundManager.instance != null)
         {
             SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
@@ -63,12 +63,12 @@ public class controllerDetection : MonoBehaviour
         PlayerPrefs.SetInt("adShowMore", 5);
         if (controllerName == "Collectable")
         {
-            if (FindObjectOfType<Handler>())
-            {
-                PlayerPrefs.SetInt("adShowMore", 5);
-                FindObjectOfType<Handler>().showWaitInterstitial();
-                PlayerPrefs.SetInt("loadInterstitialAD", 5);
-            }
+            //if (FindObjectOfType<Handler>())
+            //{
+            //    PlayerPrefs.SetInt("adShowMore", 5);
+            //    FindObjectOfType<Handler>().showWaitInterstitial();
+            //    PlayerPrefs.SetInt("loadInterstitialAD", 5);
+            //}
 
             if (FindObjectOfType<TimerScriptAD>())
             {

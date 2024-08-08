@@ -263,8 +263,9 @@ public class FireFighterManager : MonoBehaviour
     /// </summary>
     private void RefillWater()
     {
-        if (FindObjectOfType<Handler>())
-            FindObjectOfType<Handler>().ShowRewardedAdsBoth(FillTheWater);
+        FillTheWater();
+        //if (FindObjectOfType<Handler>())
+        //    FindObjectOfType<Handler>().ShowRewardedAdsBoth(FillTheWater);
 
 
     }

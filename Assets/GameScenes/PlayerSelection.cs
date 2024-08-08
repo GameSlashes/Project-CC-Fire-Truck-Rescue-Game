@@ -87,11 +87,11 @@ public class PlayerSelection : MonoBehaviour
         Time.timeScale = 1;
         AudioListener.pause = false;
         GetPlayerInfo();
-        if (FindObjectOfType<Handler>())
-        {
-            FindObjectOfType<Handler>().Show_SmallBanner1();
-            FindObjectOfType<Handler>().Show_SmallBanner2();
-        }
+        //if (FindObjectOfType<Handler>())
+        //{
+        //    FindObjectOfType<Handler>().Show_SmallBanner1();
+        //    FindObjectOfType<Handler>().Show_SmallBanner2();
+        //}
 
     }
 
@@ -223,8 +223,8 @@ public class PlayerSelection : MonoBehaviour
         }
         else if (Players[current].UnlockThroughWatchVideo)
         {
-            if (FindObjectOfType<Handler>())
-                FindObjectOfType<Handler>().ShowRewardedAdsBoth(buyWithWatchVideo);
+            //if (FindObjectOfType<Handler>())
+            //    FindObjectOfType<Handler>().ShowRewardedAdsBoth(buyWithWatchVideo);
         }
     }
 

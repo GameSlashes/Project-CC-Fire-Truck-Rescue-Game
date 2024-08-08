@@ -49,11 +49,12 @@ public class GameController : MonoBehaviour
 
         //if (isTimerEnabled)
         //    InvokeRepeating("GameTimer", 0, 1);
-        if (FindObjectOfType<Handler>())
-        {
-            FindObjectOfType<Handler>().Show_SmallBanner1();
-            FindObjectOfType<Handler>().Show_SmallBanner2();
-        }
+
+        //if (FindObjectOfType<Handler>())
+        //{
+        //    FindObjectOfType<Handler>().Show_SmallBanner1();
+        //    FindObjectOfType<Handler>().Show_SmallBanner2();
+        //}
         SoundManager.instance.PlayGamePlaySound();
     }
 
@@ -312,9 +313,9 @@ public class GameController : MonoBehaviour
     }
     public void showAd()
     {
-        var handler = FindObjectOfType<Handler>();
-        handler?.showWaitInterstitial();
-        PlayerPrefs.SetInt("loadInterstitialAD", 5);
+        //var handler = FindObjectOfType<Handler>();
+        //handler?.showWaitInterstitial();
+        //PlayerPrefs.SetInt("loadInterstitialAD", 5);
     }
 }
 
