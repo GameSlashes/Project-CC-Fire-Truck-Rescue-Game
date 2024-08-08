@@ -30,16 +30,15 @@ public class SplashPanel : MonoBehaviour
                 if (oneTime == false)
                 {
                     oneTime = true;
-                    //if (FindObjectOfType<Handler>())
-                    //{
-                    //    FindObjectOfType<Handler>().LoadInterstitialAd();
-                    //    FindObjectOfType<Handler>().Show_SmallBanner1();
-                    //    FindObjectOfType<Handler>().Show_SmallBanner2();
-                    //}
-                    //if (AppOpenAdController.Instance)
-                    //{
-                    //    AppOpenAdController.Instance.LoadAppOpenAd();
-                    //}
+                    if (FindObjectOfType<Handler>())
+                    {
+                        FindObjectOfType<Handler>().Show_SmallBanner1();
+                        FindObjectOfType<Handler>().Show_SmallBanner2();
+                    }
+                    if (AppOpenAdController.Instance)
+                    {
+                        AppOpenAdController.Instance.LoadAppOpenAd();
+                    }
 
                 }
             }

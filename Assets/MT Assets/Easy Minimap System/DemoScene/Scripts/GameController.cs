@@ -33,6 +33,10 @@ namespace MTAssets.EasyMinimapSystem
             fullScreenMapObj.SetActive(true);
             playerMinimapCamera.gameObject.SetActive(true);
             beforeFullscreenGlobalSizeMultiplier = MinimapDataGlobal.GetMinimapItemsSizeGlobalMultiplier();
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+            }
             MinimapDataGlobal.SetMinimapItemsSizeGlobalMultiplier(1.5f);
             if (cursor != null)
                 cursor.gameObject.SetActive(true);
@@ -41,6 +45,10 @@ namespace MTAssets.EasyMinimapSystem
 
         public void CloseFullscreenMap()
         {
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+            }
             fullScreenMapObj.SetActive(false);
             playerMinimapCamera.gameObject.SetActive(false);
             MinimapDataGlobal.SetMinimapItemsSizeGlobalMultiplier(beforeFullscreenGlobalSizeMultiplier);

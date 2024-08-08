@@ -114,20 +114,20 @@ static class RCCP_HierarchyIcons {
         RCCP_CarControllerTexturePath = RCCP_CarControllerTexture != null ? (RCCP_GetAssetPath.GetAssetPath(RCCP_CarControllerTexture)) : "";
         IRCCP_ComponentTexturePath = IRCCP_ComponentTexture != null ? (RCCP_GetAssetPath.GetAssetPath(IRCCP_ComponentTexture)) : "";
 
-        typeIcons = new Dictionary<Type, GUIContent>() 
+        //typeIcons = new Dictionary<Type, GUIContent>()
         {
 
-        //{ typeof(RCCP_SceneManager), EditorGUIUtility.IconContent( RCCP_SceneManagerTexturePath ) },
-        //{ typeof(RCCP_Camera), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_CameraTexture) ) },
-        //{ typeof(RCCP_UIManager), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_UIManagerTexture) ) },
-        //{ typeof(RCCP_FixedCamera), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_FixedCameraTexture) ) },
-        //{ typeof(RCCP_CinematicCamera), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_CinematicCameraTexture) ) },
-        //{ typeof(RCCP_SkidmarksManager), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_SkidmarksManagerTexture) ) },
-        //{ typeof(RCCP_AIWaypointsContainer), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_AIWaypointsContainerTexture) ) },
-        //{ typeof(RCCP_CarController), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_CarControllerTexture) ) },
-        //{ typeof(IRCCP_Component), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(IRCCP_ComponentTexture) ) },
+            //{ typeof(RCCP_SceneManager), EditorGUIUtility.IconContent( RCCP_SceneManagerTexturePath ) },
+            //{ typeof(RCCP_Camera), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_CameraTexture) ) },
+            //{ typeof(RCCP_UIManager), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_UIManagerTexture) ) },
+            //{ typeof(RCCP_FixedCamera), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_FixedCameraTexture) ) },
+            //{ typeof(RCCP_CinematicCamera), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_CinematicCameraTexture) ) },
+            //{ typeof(RCCP_SkidmarksManager), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_SkidmarksManagerTexture) ) },
+            //{ typeof(RCCP_AIWaypointsContainer), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_AIWaypointsContainerTexture) ) },
+            //{ typeof(RCCP_CarController), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(RCCP_CarControllerTexture) ) },
+            //{ typeof(IRCCP_Component), EditorGUIUtility.IconContent( AssetDatabase.GetAssetPath(IRCCP_ComponentTexture) ) },
 
-    };
+        };
 
         GameObject go = EditorUtility.InstanceIDToObject(id) as GameObject;
 

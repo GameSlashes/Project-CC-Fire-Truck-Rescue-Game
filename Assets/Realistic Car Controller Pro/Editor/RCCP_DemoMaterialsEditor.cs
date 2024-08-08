@@ -50,16 +50,16 @@ public class RCCP_DemoMaterialsEditor : Editor {
         if (GUILayout.Button("Convert All Demo Vehicle Body Shaders To Builtin Shaders"))
             EditorApplication.ExecuteMenuItem("Tools/BoneCracker Games/Realistic Car Controller Pro/URP/To Builtin/[Step 3] Convert All Demo Vehicle Body Materials To Builtin");
 
-        //if (GUILayout.Button("Get Default Shaders")) {
+        if (GUILayout.Button("Get Default Shaders")) {
 
-        //    for (int i = 0; i < prop.demoMaterials.Length; i++) {
+            for (int i = 0; i < prop.demoMaterials.Length; i++) {
 
-        //        if (prop.demoMaterials[i] != null && prop.demoMaterials[i].material != null)
-        //            Debug.Log(prop.demoMaterials[i].DefaultShader);
+                if (prop.demoMaterials[i] != null && prop.demoMaterials[i].material != null)
+                    Debug.Log(prop.demoMaterials[i].DefaultShader);
 
-        //    }
+            }
 
-        //}
+        }
 
         EditorGUILayout.LabelField("Created by Ekrem Bugra Ozdoganlar\nBoneCracker Games", EditorStyles.centeredGreyMiniLabel, GUILayout.MaxHeight(50f));
 

@@ -378,11 +378,27 @@ public class RCCP_Stability : RCCP_Component {
         if (CarController.Rigid.isKinematic)
             return;
 
+        float correctedSteerHelper = steerHelperStrength * .35f;
+
         Vector3 localVelocity = transform.InverseTransformDirection(CarController.Rigid.velocity);
-        localVelocity.x *= 1f - (steerHelperStrength * .075f);
+
+        float oldX = localVelocity.x;
+        localVelocity.x *= (1f - (correctedSteerHelper * .25f));
+        float differenceX = Mathf.Abs(oldX) - Mathf.Abs(localVelocity.x);
+
+        //if (differenceX >= .05f) {
+
+        //    if (localVelocity.x > 0)
+        //        localVelocity.x = Mathf.Clamp(localVelocity.x, oldX - (differenceX * correctedSteerHelper), Mathf.Infinity);
+
+        //    if (localVelocity.x < 0)
+        //        localVelocity.x = Mathf.Clamp(localVelocity.x, -Mathf.Infinity, oldX + (differenceX * correctedSteerHelper));
+
+        //}
 
         CarController.Rigid.velocity = transform.TransformDirection(localVelocity);
-        CarController.Rigid.AddForce(-transform.right * localVelocity.x * steerHelperStrength * .01f, ForceMode.VelocityChange);
+        CarController.Rigid.AddForce(-transform.right * localVelocity.x * correctedSteerHelper * .1f, ForceMode.VelocityChange);
+        CarController.Rigid.AddForce(transform.right * correctedSteerHelper * (CarController.steerAngle / 40f) * Mathf.InverseLerp(10f, 60f, CarController.absoluteSpeed) * 1f, ForceMode.VelocityChange);
 
         int direction = 1;
 
@@ -391,14 +407,11 @@ public class RCCP_Stability : RCCP_Component {
 
         // Adjusting angular velocity based on the steering angle and speed
         Vector3 angularVelocity = CarController.Rigid.angularVelocity;
-        float adjustedSteerAngle = CarController.FrontAxle.steerAngle * .1f;
+        angularVelocity.y *= (1f - (correctedSteerHelper * .1f));
 
-        adjustedSteerAngle *= direction;
-        adjustedSteerAngle *= Mathf.Clamp(Mathf.InverseLerp(0f, 40f, CarController.absoluteSpeed), 0f, Mathf.Infinity);
-        angularVelocity.y = Mathf.Lerp(angularVelocity.y, Mathf.Lerp(angularVelocity.y, adjustedSteerAngle, steerHelperStrength * .025f), 1f);
-
-        if (steerHelperStrength > 0)
-            CarController.Rigid.angularVelocity = angularVelocity;
+        CarController.Rigid.angularVelocity = angularVelocity;
+        CarController.Rigid.AddRelativeTorque(Vector3.up * angularVelocity.y * correctedSteerHelper * .125f * -direction, ForceMode.VelocityChange);
+        CarController.Rigid.AddRelativeTorque(Vector3.up * correctedSteerHelper * (CarController.steerAngle / 40f) * Mathf.InverseLerp(0f, 80f, CarController.absoluteSpeed) * .75f * direction, ForceMode.VelocityChange);
 
     }
 

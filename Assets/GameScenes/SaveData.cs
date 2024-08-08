@@ -1,6 +1,8 @@
 ﻿using System;
-using UnityEngine.UI;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public enum Scenes
 {
@@ -35,7 +37,11 @@ public class Game_Dialogues
 
     public GameObject objectivePanel;
     public Text objectiveText;
-    
+
+    public GameObject Pipe;
+    public GameObject WaterExting;
+    public GameObject WaterGun;
+
 }
 
 [System.Serializable]
@@ -160,10 +166,9 @@ public class SaveData
 
     public void showAd()
     {
-        //if(AdCalls.instance)
-        //{
-        //    AdCalls.instance.Admob_Unity();
-        //}
+        //var handler = FindObjectOfType<Handler>();
+        //handler?.showWaitInterstitial();
+        //PlayerPrefs.SetInt("loadInterstitialAD", 5);
     }
 
    

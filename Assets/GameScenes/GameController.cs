@@ -3,16 +3,19 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
-
+    
     [Header("--------------------Scene Selection--------------------")]
     public Scenes PreviousScene;
     public Scenes MainMenu;
     [Header("--------------------Players-----------------------------")]
     public GameObject[] players;
+    [HideInInspector]
+    public GameObject myPlayers;
     [Header("--------------------Levels-----------------------------")]
     public int playableLevels;
     public Level_Data[] levels;
@@ -46,8 +49,12 @@ public class GameController : MonoBehaviour
 
         //if (isTimerEnabled)
         //    InvokeRepeating("GameTimer", 0, 1);
-
-        SoundManager.instance.playMainMenuSound();
+        if (FindObjectOfType<Handler>())
+        {
+            FindObjectOfType<Handler>().Show_SmallBanner1();
+            FindObjectOfType<Handler>().Show_SmallBanner2();
+        }
+        SoundManager.instance.PlayGamePlaySound();
     }
 
     public void checkModeStats()
@@ -152,7 +159,9 @@ public class GameController : MonoBehaviour
             if (i == SaveData.instance.finalPlayer)
             {
                 players[i].SetActive(true);
-                SetPlayerPosition(players[i], levels[SaveData.instance.CurrentLevel].SpawnPoint);
+                myPlayers= players[i];
+                MissionManager.Instance.myCar = myPlayers;
+                //SetPlayerPosition(players[i], levels[SaveData.instance.CurrentLevel].SpawnPoint);
             }
             else
             {
@@ -226,13 +235,15 @@ public class GameController : MonoBehaviour
 
     public void NextBtn()
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
 
         if (SaveData.instance.CurrentLevel < playableLevels - 1 && SaveData.instance.Level < playableLevels)
             SaveData.instance.CurrentLevel += 1;
         else
-            SaveData.instance.CurrentLevel = Random.Range(0, playableLevels - 1);
+            //SaveData.instance.CurrentLevel = Random.Range(0, playableLevels - 1);
         
         Game_Elements.LoadingScreen.SetActive(true);
         LoadScene.SceneName = SceneManager.GetActiveScene().name;
@@ -240,33 +251,41 @@ public class GameController : MonoBehaviour
 
     public void mainMenu()
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        showAd();
+        Time.timeScale = 1;
+        PlayerPrefs.SetInt("adShowMore", 5);
+        PlayerPrefs.SetString("fakeScene", "MainMenu");
+        SceneManager.LoadScene("FakeLoading");
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
 
-        SaveData.instance.showAd();
-        Game_Elements.LoadingScreen.SetActive(true);
-        LoadScene.SceneName = MainMenu.ToString();
-        
     }
 
     public void restart()
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        showAd();
+        Time.timeScale = 1;
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
 
-        Game_Elements.LoadingScreen.SetActive(true);
-        LoadScene.SceneName = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetInt("adShowMore", 5);
+        PlayerPrefs.SetString("fakeScene", "Gameplay");
+        SceneManager.LoadScene("FakeLoading");
     }
 
     public void gamePause()
     {
-        SaveData.instance.showAd();
         Time.timeScale = 0;
         Game_Elements.PauseMenu.SetActive(true);
     }
 
     public void resume()
     {
+        showAd();
         Time.timeScale = 1;
         Game_Elements.PauseMenu.SetActive(false);
     }
@@ -290,6 +309,12 @@ public class GameController : MonoBehaviour
         SaveData.instance.Gems += levels[SaveData.instance.CurrentLevel].gemReward / 2;
 
         Game_Elements.doubleRewardBtn.SetActive(false);
+    }
+    public void showAd()
+    {
+        var handler = FindObjectOfType<Handler>();
+        handler?.showWaitInterstitial();
+        PlayerPrefs.SetInt("loadInterstitialAD", 5);
     }
 }
 

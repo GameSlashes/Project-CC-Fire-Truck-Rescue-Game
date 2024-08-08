@@ -16,11 +16,11 @@ EditorBuildSettings:
     guid: 7df798099d4c1dd48acb8d09f9621cc9
   - enabled: 1
     path: Assets/GameScenes/Scenes/FakeLoading.unity
-    guid: 804e7a2d47e4fa14699bf56a9d80df6f
+    guid: 8746aa8044b93ef4d8b18ddc04274e4f
+  - enabled: 1
+    path: Assets/GameScenes/Scenes/Gameplay.unity
+    guid: f4620ffd31ba4bf4984b0dda015752cd
   - enabled: 1
     path: Assets/GameScenes/Scenes/LevelSelection.unity
     guid: b7e9236c536ffdf4b87abab8be9b60a2
-  - enabled: 1
-    path: Assets/GameScenes/Scenes/Gameplay.unity
-    guid: d87f45589d2542743976cdf3b5247b2d
   m_configObjects: {}

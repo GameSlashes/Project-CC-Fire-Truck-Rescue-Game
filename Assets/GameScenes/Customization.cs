@@ -82,8 +82,10 @@ public class Customization : MonoBehaviour
 
     public void updateColor(int colorID)
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
 
         if (colorID != 0)
         {
@@ -165,8 +167,10 @@ public class Customization : MonoBehaviour
 
     public void updateTyres(int tyresID)
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
 
 
         PlayerCustomization.instance.activeTyresID = tyresID;
@@ -267,8 +271,10 @@ public class Customization : MonoBehaviour
 
     public void updateSpoiler(int SpoilerID)
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
 
 
         PlayerCustomization.instance.activeSpoilerID = SpoilerID;
@@ -345,8 +351,10 @@ public class Customization : MonoBehaviour
 
     public void updateDecals(int DecalsID)
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
 
 
         PlayerCustomization.instance.activeDecalsID = DecalsID;
@@ -414,8 +422,10 @@ public class Customization : MonoBehaviour
 
     public void backBtn()
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
 
 
         for (int i = 0; i < Players[PlayerSelection.instance.current].playerMat.Length; i++)
@@ -442,9 +452,9 @@ public class Customization : MonoBehaviour
 
     public void playBtnSound()
     {
-        if(SoundManager.instance)
+        if (SoundManager.instance != null)
         {
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
         }
     }
 

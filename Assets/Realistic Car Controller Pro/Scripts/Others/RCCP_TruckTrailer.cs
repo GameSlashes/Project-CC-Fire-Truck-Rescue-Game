@@ -42,6 +42,9 @@ public class RCCP_TruckTrailer : RCCP_GenericComponent {
 
         public WheelCollider wheelCollider;
         public Transform wheelModel;
+        public bool steering = false;
+        public float maxSteerAngle = 40f;
+        [HideInInspector] public Vector3 localPosition = Vector3.zero;
 
         public void Torque(float torque) {
 
@@ -216,6 +219,15 @@ public class RCCP_TruckTrailer : RCCP_GenericComponent {
         if (isSleeping)
             return;
 
+        if (trailerWheels == null)
+            return;
+
+        if (trailerWheels.Length < 1)
+            return;
+
+        float averageSidewaysSlip = 0f;
+        int steeringWheelAmount = 0;
+
         for (int i = 0; i < trailerWheels.Length; i++) {
 
             // Return if no wheel model selected.
@@ -234,6 +246,43 @@ public class RCCP_TruckTrailer : RCCP_GenericComponent {
 
             //	Assigning position and rotation to the wheel model.
             trailerWheels[i].wheelModel.transform.SetPositionAndRotation(wheelPosition, wheelRotation);
+
+            if (trailerWheels[i].steering) {
+
+                WheelHit hit;
+                trailerWheels[i].wheelCollider.GetGroundHit(out hit);
+
+                int direction = transform.InverseTransformDirection(rigid.velocity).z > 0 ? 1 : -1;
+
+                averageSidewaysSlip += hit.sidewaysSlip * direction;
+                steeringWheelAmount++;
+
+            }
+
+        }
+
+        if (averageSidewaysSlip > 0f && steeringWheelAmount > 0)
+            averageSidewaysSlip /= (float)steeringWheelAmount;
+
+        for (int i = 0; i < trailerWheels.Length; i++) {
+
+            if (trailerWheels[i].steering) {
+
+                if (trailerWheels[i].localPosition == Vector3.zero)
+                    trailerWheels[i].localPosition = trailerWheels[i].wheelCollider.transform.localPosition;
+
+                trailerWheels[i].wheelCollider.steerAngle += averageSidewaysSlip;
+                trailerWheels[i].wheelCollider.steerAngle = Mathf.Clamp(trailerWheels[i].wheelCollider.steerAngle, -trailerWheels[i].maxSteerAngle, trailerWheels[i].maxSteerAngle);
+
+                int side = 1;
+
+                if (trailerWheels[i].localPosition.x < 0)
+                    side = -1;
+
+                Vector3 targetPosition = new Vector3(trailerWheels[i].localPosition.x - trailerWheels[i].wheelCollider.steerAngle * .01f * 1f, trailerWheels[i].localPosition.y, trailerWheels[i].localPosition.z - trailerWheels[i].wheelCollider.steerAngle * .015f * side);
+                trailerWheels[i].wheelCollider.transform.localPosition = targetPosition;
+
+            }
 
         }
 

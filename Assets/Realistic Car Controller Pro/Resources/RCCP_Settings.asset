@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RCCP_Settings
   m_EditorClassIdentifier: 
   multithreading: 1
-  behaviorSelectedIndex: 0
+  behaviorSelectedIndex: 3
   overrideFPS: 0
   overrideFixedTimeStep: 0
   fixedTimeStep: 0.02
@@ -145,8 +145,8 @@ MonoBehaviour:
     counterSteeringMaximum: 1
     steeringSpeedMinimum: 2
     steeringSpeedMaximum: 2
-    steeringHelperStrengthMinimum: 0.03
-    steeringHelperStrengthMaximum: 0.03
+    steeringHelperStrengthMinimum: 0.015
+    steeringHelperStrengthMaximum: 0.015
     tractionHelperStrengthMinimum: 0.1
     tractionHelperStrengthMaximum: 0.5
     angularDrag: 0.15
@@ -335,7 +335,7 @@ MonoBehaviour:
   useTelemetry: 0
   useInputDebugger: 0
   useNewInputSystem: 1
-  autoSaveLoadInputRebind: 0
+  autoSaveLoadInputRebind: 1
   mobileController: 0
   mobileControllerEnabled: 1
   gyroSensitivity: 2.5

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1369336398842893346}
   - component: {fileID: 8041403958572902880}
   - component: {fileID: 3775071191566273808}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: TriggerCollider (Ignore)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2506376761428501210}
   - component: {fileID: 2506376761428501209}
   - component: {fileID: 2506376761428501208}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: TriggerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 2506376762023032809}
   - component: {fileID: 2506376762023032808}
   - component: {fileID: 2506376762023032807}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 2506376762087140648}
   - component: {fileID: 2506376762087140647}
   - component: {fileID: 2506376762087140646}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2506376762189256293}
   - component: {fileID: 2506376762189256292}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: RTC_TrafficLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 2506376762598687908}
   - component: {fileID: 2506376762598687907}
   - component: {fileID: 2506376762598687906}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 8680855780147146585}
   - component: {fileID: 1624922708777338814}
   - component: {fileID: 3061387408999033032}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: Traffic Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 2506376762940140402}
   - component: {fileID: 2506376762940140401}
   - component: {fileID: 3569180469565839556}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 72678921795097863}
   - component: {fileID: 7517746127289880822}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5908285341722698206}
   - component: {fileID: 1431444134014869823}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3766185569852982859}
   - component: {fileID: 2544732948089003689}
-  m_Layer: 21
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

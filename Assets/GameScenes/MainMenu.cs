@@ -14,25 +14,18 @@ public class MainMenu : MonoBehaviour
     public GameObject Shop;
     public Text totalCoins;
 
-    [Header("Settings")]
-    public GameObject soundOnBtn;
-    public GameObject soundOffBtn;
 
 
     void Start()
     {
         Time.timeScale = 1;
         InitializeUI();
-        checkSound();
-        SoundManager.instance.playMainMenuSound();
+        if (FindObjectOfType<Handler>())
+        {
+            FindObjectOfType<Handler>().Show_SmallBanner1();
+            FindObjectOfType<Handler>().Show_SmallBanner2();
+        }
     }
-
-    public void showAds()
-    {
-        SaveData.instance.showAd();
-    }
-
-   
     void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
@@ -54,8 +47,9 @@ public class MainMenu : MonoBehaviour
     public void PlayBtn()
     {
         playBtnSound();
-        showAds();
-        SceneManager.LoadScene(NextScene.ToString());
+        PlayerPrefs.SetInt("adShowMore", 5);
+        PlayerPrefs.SetString("fakeScene", "PlayerSelection");
+        SceneManager.LoadScene("FakeLoading");
     }
 
     public void RemoveAds()
@@ -67,7 +61,7 @@ public class MainMenu : MonoBehaviour
     public void openLink(string link)
     {
         playBtnSound();
-        Application.OpenURL(link);
+        Application.OpenURL(link);  
     }
 
     public void DialogueOpen(GameObject dialogue)
@@ -89,43 +83,11 @@ public class MainMenu : MonoBehaviour
 
     public void playBtnSound()
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
-    }
-
-
-    public void soundOn()
-    {
-        AudioListener.volume = 1;
-        soundOffBtn.SetActive(true);
-        soundOnBtn.SetActive(false);
-        PlayerPrefs.SetString("sound", "on");
-        playBtnSound();
-    }
-
-    public void soundOff()
-    {
-        AudioListener.volume = 0;
-        soundOffBtn.SetActive(false);
-        soundOnBtn.SetActive(true);
-        PlayerPrefs.SetString("sound", "off");
-        playBtnSound();
-    }
-
-    public void checkSound()
-    {
-        if (!PlayerPrefs.HasKey("sound"))
+        if (SoundManager.instance != null)
         {
-            soundOn();
-        }
-        else if (PlayerPrefs.GetString("sound") == "on")
-        {
-            soundOn();
-        }
-        else if (PlayerPrefs.GetString("sound") == "off")
-        {
-            soundOff();
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
         }
     }
+
 
 }

@@ -183,7 +183,7 @@ MonoBehaviour:
   TPSTiltMaximum: 1
   TPSTiltMultiplier: 1
   TPSYaw: 0
-  TPSPitch: 6
+  TPSPitch: 7.5
   TPSAutoFocus: 1
   TPSAutoReverse: 1
   TPSOffset: {x: 0, y: 0, z: 0.2}

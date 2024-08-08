@@ -15,6 +15,6 @@ using UnityEngine;
 /// </summary>
 public class RTC_Version {
 
-    public const string version = "V1.50";
+    public const string version = "V1.60";
 
 }

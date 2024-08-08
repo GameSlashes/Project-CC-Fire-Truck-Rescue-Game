@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
@@ -40,7 +41,11 @@ public class LevelSelection : MonoBehaviour
         CacheButtons();
         LevelsInit();
         checkMode();
-
+        if (FindObjectOfType<Handler>())
+        {
+            FindObjectOfType<Handler>().Show_SmallBanner1();
+            FindObjectOfType<Handler>().Show_SmallBanner2();
+        }
 
     }
 
@@ -56,8 +61,10 @@ public class LevelSelection : MonoBehaviour
         {
             int LevelIndex = i;
             LevelButtons[i].onClick.AddListener(() => PlayLevel(LevelIndex));
-            if (SoundManager.instance)
-                SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+            }
         }
     }
 
@@ -109,9 +116,13 @@ public class LevelSelection : MonoBehaviour
 
     public void BackBtn()
     {
-        SaveData.instance.showAd();
-        LoadScene.SceneName = PreviousScene.ToString();
-        //SceneManager.LoadScene(PreviousScene.ToString());
+        PlayerPrefs.SetInt("adShowMore", 5);
+        PlayerPrefs.SetString("fakeScene", "PlayerSelection");
+        SceneManager.LoadScene("FakeLoading");
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
     }
 
     public void checkMode()
@@ -147,9 +158,9 @@ public class LevelSelection : MonoBehaviour
 
         if(modeID == 1)
         {
-            ModeSelection.SetActive(false);
-            LevelSelections.SetActive(true);
-            PlayerPrefs.SetInt("Mode", 1);
+            PlayerPrefs.SetInt("adShowMore", 5);
+            PlayerPrefs.SetString("fakeScene", "Gameplay");
+            SceneManager.LoadScene("FakeLoading");
         }
         else if(modeID == 2)
         {
@@ -186,8 +197,10 @@ public class LevelSelection : MonoBehaviour
             
         }
 
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
     }
 
 

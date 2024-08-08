@@ -345,7 +345,7 @@ public class RCCP_Settings : ScriptableObject {
     public GameObject exhaustGas;
     public RCCP_SkidmarksManager skidmarksManager;
     public GameObject wheelBlur;
-    public LensFlareDataSRP lensFlareData;
+    //public LensFlareDataSRP lensFlareData;
 
     #endregion
 

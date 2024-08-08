@@ -87,7 +87,12 @@ public class PlayerSelection : MonoBehaviour
         Time.timeScale = 1;
         AudioListener.pause = false;
         GetPlayerInfo();
-        
+        if (FindObjectOfType<Handler>())
+        {
+            FindObjectOfType<Handler>().Show_SmallBanner1();
+            FindObjectOfType<Handler>().Show_SmallBanner2();
+        }
+
     }
 
     public void Update()
@@ -218,7 +223,8 @@ public class PlayerSelection : MonoBehaviour
         }
         else if (Players[current].UnlockThroughWatchVideo)
         {
-
+            if (FindObjectOfType<Handler>())
+                FindObjectOfType<Handler>().ShowRewardedAdsBoth(buyWithWatchVideo);
         }
     }
 
@@ -254,29 +260,31 @@ public class PlayerSelection : MonoBehaviour
     public void BackBtn()
     {
         playBtnSound();
-        Selection_UI.LoadingScreen.SetActive(true);
-        SceneManager.LoadScene(PreviousScene.ToString());
+        PlayerPrefs.SetInt("adShowMore", 5);
+        PlayerPrefs.SetString("fakeScene", "MainMenu");
+        SceneManager.LoadScene("FakeLoading");
     }
 
     public void playBtnSound()
     {
-        if (SoundManager.instance)
-            SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
     }
 
     public void PlayLevel()
     {
         playBtnSound();
         SaveData.instance.finalPlayer = current;
-        SaveData.instance.showAd();
-        Selection_UI.LoadingScreen.SetActive(true);
         StartCoroutine(LevelStart());
     }
 
     IEnumerator LevelStart()
     {
-        LoadScene.SceneName = NextScene.ToString();
-        async = SceneManager.LoadSceneAsync(NextScene.ToString());
+        PlayerPrefs.SetInt("adShowMore", 5);
+        PlayerPrefs.SetString("fakeScene", "LevelSelection");
+        SceneManager.LoadScene("FakeLoading");
         yield return async;
     }
 

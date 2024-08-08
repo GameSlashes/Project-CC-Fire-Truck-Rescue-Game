@@ -2,14 +2,18 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WinGlass-01-D
   m_Shader: {fileID: 23, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _NORMALMAP _SPECULARHIGHLIGHTS_OFF
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
+  - _NORMALMAP
+  - _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -20,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 9b4f48962aaf6a24f93e8f5f270223b6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 073ab34d69abb8447bd2e1e65e8a6f25, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorControl:
@@ -67,6 +71,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -93,3 +98,4 @@ Material:
     - _ReflectColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 0}
     - _SpecColor: {r: 0.77254903, g: 0.77254903, b: 0.77254903, a: 1}
     - _horizonColor: {r: 0.172, g: 0.463, b: 0.435, a: 0}
+  m_BuildTextureStacks: []

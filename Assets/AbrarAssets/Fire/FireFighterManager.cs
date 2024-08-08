@@ -1,7 +1,7 @@
+using Invector.vItemManager;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class FireFighterManager : MonoBehaviour
 {
     public static FireFighterManager instance;
@@ -11,6 +11,8 @@ public class FireFighterManager : MonoBehaviour
     public GameObject firePipe; // The fire pipe used for larger fires
     public GameObject water; // The water object for visual effects
     public GameObject fireExtinguisherSpray; // The fire extinguisher spray object for visual effects
+    public vItemManager itemManager;
+    public vItem /*BaseBallBat,*/ Rifle,Melee, Pistol;
 
     [Header("UI Elements")]
     public GameObject fireExtinguisherButton; // Button for equipping the fire extinguisher
@@ -22,6 +24,7 @@ public class FireFighterManager : MonoBehaviour
     public Slider fireExtinguisherCapacitySlider; // Slider for fire extinguisher capacity
     public GameObject fireExtinguisherRefillPanel; // Panel for refilling fire extinguisher
     public Button fireExtinguisherRefillButton; // Button for refilling fire extinguisher
+    public Button ambulanceManagerAnimationButton; // Button for refilling fire extinguisher
 
     [Header("Debugging")]
     public bool debugMode; // Enable or disable debug logging
@@ -30,8 +33,10 @@ public class FireFighterManager : MonoBehaviour
     private float currentWaterCapacity;
     private float maxFireExtinguisherCapacity = 100f; // Maximum fire extinguisher capacity
     private float currentFireExtinguisherCapacity;
-    private bool isFirePipeActive = false;
+    [HideInInspector]
+    public bool isFirePipeActive = false;
     private bool isFireExtinguisherSprayActive = false;
+    private AmbulanceController ambulanceController;
 
     public void Start()
     {
@@ -56,6 +61,16 @@ public class FireFighterManager : MonoBehaviour
         else
         {
             if (debugMode) Debug.LogWarning("Fire extinguisher button is not assigned.");
+        } 
+        
+        if (ambulanceManagerAnimationButton != null)
+        {
+            ambulanceManagerAnimationButton.gameObject.SetActive(false); // Ensure the button is initially inactive
+            ambulanceManagerAnimationButton.onClick.AddListener(ActivateAmbulanceComponents);
+        }
+        else
+        {
+            if (debugMode) Debug.LogWarning("ambulanceManagerAnimationButton button is not assigned.");
         }
 
         if (waterButton != null)
@@ -157,8 +172,17 @@ public class FireFighterManager : MonoBehaviour
         isFirePipeActive = !isFirePipeActive;
         if (debugMode) Debug.Log(isFirePipeActive);
         SetPipeActive(isFirePipeActive);
-    }
 
+    }
+    public void SetEquipId()
+    {
+        Debug.Log(itemManager);
+        itemManager.UnequipCurrentEquipedItem(0);
+        itemManager.EquipItemToEquipSlot(0, 0, Rifle);
+        MissionManager.Instance.GameElements.mapLine.GetComponent<MapLine>().endPoint = MissionManager.Instance.Missions[MissionManager.Instance.currentMissionIndex].missionDataObjectData[2].objTOActivate.gameObject;
+        MissionManager.Instance.Missions[MissionManager.Instance.currentMissionIndex].missionDataObjectData[1].objTOActivate.gameObject.SetActive(false);
+        //itemManager.EquipItemToCurrentEquipSlot(Rifle, 0);
+    }
     /// <summary>
     /// Check if the water object is active.
     /// </summary>
@@ -204,7 +228,7 @@ public class FireFighterManager : MonoBehaviour
     {
         while (IsWaterActive() && currentWaterCapacity > 0)
         {
-            currentWaterCapacity -= 1f; // Adjust this value to control the water consumption rate
+            currentWaterCapacity -= .5f; // Adjust this value to control the water consumption rate
             UpdateWaterSlider();
             if (currentWaterCapacity <= 0)
             {
@@ -239,6 +263,13 @@ public class FireFighterManager : MonoBehaviour
     /// </summary>
     private void RefillWater()
     {
+        if (FindObjectOfType<Handler>())
+            FindObjectOfType<Handler>().ShowRewardedAdsBoth(FillTheWater);
+
+
+    }
+    public void FillTheWater()
+    {
         currentWaterCapacity = maxWaterCapacity;
         UpdateWaterSlider();
         if (debugMode) Debug.Log("Water refilled to maximum capacity.");
@@ -269,14 +300,34 @@ public class FireFighterManager : MonoBehaviour
     /// <param name="other">The collider that triggered the event.</param>
     private void OnTriggerEnter(Collider other)
     {
+        // Check for "Action" tag
         if (other.CompareTag("Action"))
         {
+            // Activate the fire extinguisher button if it exists
             if (fireExtinguisherButton != null)
             {
                 fireExtinguisherButton.SetActive(true);
                 if (debugMode) Debug.Log("Fire extinguisher button activated.");
             }
+
+            // Check if the colliding object has an AmbulanceController component
+            ambulanceController = other.gameObject.GetComponent<AmbulanceController>();
+            if (ambulanceController != null)
+            {
+                // Call the ActivateAmbulanceComponents method to enable animators and handle patients
+                ambulanceManagerAnimationButton.gameObject.SetActive(false);
+                if (debugMode) Debug.Log("Ambulance components activated.");
+            }
+            else
+            {
+                if (debugMode) Debug.LogWarning("No AmbulanceController found on the colliding object.");
+            }
         }
+    }
+
+    public void ActivateAmbulanceComponents()
+    {
+        ambulanceController.ActivateAmbulanceComponents();
     }
 
     /// <summary>
@@ -379,4 +430,5 @@ public class FireFighterManager : MonoBehaviour
             fireExtinguisherSprayButton.gameObject.SetActive(true);
         }
     }
+
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "948913001242",
+    "project_id": "firefighter-truck-simulator",
+    "storage_bucket": "firefighter-truck-simulator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948913001242:android:ec64243e09ebebb47f12a3",
+        "android_client_info": {
+          "package_name": "com.cc.firefighter.truck.rescue.simulator.games"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCIeQICtWNPaV0lDTMJeLx04wW0mMk9gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

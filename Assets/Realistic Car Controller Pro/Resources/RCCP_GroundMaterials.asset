@@ -16,7 +16,7 @@ MonoBehaviour:
   - groundMaterial: {fileID: 13400000, guid: 6d484cf27c4c65244885d1bbbaedd11b, type: 2}
     forwardStiffness: 1.25
     sidewaysStiffness: 1.25
-    slip: 0.35
+    slip: 0.3
     damp: 0.6
     volume: 1
     groundParticles: {fileID: 1088255853978532, guid: e2c4a8323f8addc4696c51e0372cf7c7, type: 3}

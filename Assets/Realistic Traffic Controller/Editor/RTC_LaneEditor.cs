@@ -54,30 +54,31 @@ public class RTC_LaneEditor : Editor {
     }
 
     [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected | GizmoType.Pickable)]
-    public static void OnDrawSceneGizmos(RTC_Lane lane, GizmoType gizmoType) {
+    public static void OnDrawSceneGizmos(RTC_Lane lane, GizmoType gizmoType)
+    {
 
-        if ((gizmoType & GizmoType.Selected) != 0)
-            Gizmos.color = RTC_Settings.Instance.selectedLaneColor;
-        else
-            Gizmos.color = RTC_Settings.Instance.unselectedLaneColor;
+        //if ((gizmoType & GizmoType.Selected) != 0)
+        //    Gizmos.color = RTC_Settings.Instance.selectedLaneColor;
+        //else
+        //    Gizmos.color = RTC_Settings.Instance.unselectedLaneColor;
 
-        if (lane && lane.waypoints != null) {
+        //if (lane && lane.waypoints != null) {
 
-            for (int i = 0; i < lane.waypoints.Length; i++) {
+        //    for (int i = 0; i < lane.waypoints.Length; i++) {
 
-                if (lane.waypoints[i] != null) {
+        //        if (lane.waypoints[i] != null) {
 
-                    if (lane.waypoints[i].nextWaypoint)
-                        Gizmos.DrawLine(lane.waypoints[i].transform.position, lane.waypoints[i].nextWaypoint.transform.position);
+        //            if (lane.waypoints[i].nextWaypoint)
+        //                Gizmos.DrawLine(lane.waypoints[i].transform.position, lane.waypoints[i].nextWaypoint.transform.position);
 
-                    if (lane.waypoints[i].interConnectionWaypoint)
-                        Gizmos.DrawLine(lane.waypoints[i].transform.position, lane.waypoints[i].interConnectionWaypoint.transform.position);
+        //            if (lane.waypoints[i].interConnectionWaypoint)
+        //                Gizmos.DrawLine(lane.waypoints[i].transform.position, lane.waypoints[i].interConnectionWaypoint.transform.position);
 
-                }
+        //        }
 
-            }
+        //    }
 
-        }
+        //}
 
     }
 

@@ -3,8 +3,6 @@ public class controllerDetection : MonoBehaviour
 {
     public string controllerName;
     public GameObject controller;
-    //public vParachuteController _parachuteController;
-    //public LuxyCars myNewCar;
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Collectable")
@@ -26,33 +24,35 @@ public class controllerDetection : MonoBehaviour
         }
     }
 
-    public GameObject obj1;
+    //public GameObject obj1;
 
     public void getInBtn()
     {
-        //if (FindObjectOfType<Handler>())
-        //{
-        //    PlayerPrefs.SetInt("adShowMore", 5);
-        //    FindObjectOfType<Handler>().ShowInterstitialAd();
-        //    PlayerPrefs.SetInt("loadInterstitialAD", 5);
-        //}
-
-        //if (FindObjectOfType<TimerScriptAD>())
-        //{
-        //    FindObjectOfType<TimerScriptAD>().checkInterstitial();
-        //}
+        if (FindObjectOfType<Handler>())
+        {
+            PlayerPrefs.SetInt("adShowMore", 5);
+            FindObjectOfType<Handler>().showWaitInterstitial();
+            PlayerPrefs.SetInt("loadInterstitialAD", 5);
+        }
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+        }
+        if (FindObjectOfType<TimerScriptAD>())
+        {
+            FindObjectOfType<TimerScriptAD>().checkInterstitial();
+        }
         if (controllerName == "Collectable")
         {
             GameManager.instance.uiElements.fadeManager.SetActive(true);
             if (controller)
             {
+                controller.GetComponentInParent<Rigidbody>().drag = 0.01f;
                 GameManager.instance.setController(GameManager.instance.allControllers[1]);
-                controller.transform.parent.gameObject.SetActive(false);
-                Vector3 spawnPosition = controller.transform.position;
-                Quaternion spawnRotation = controller.transform.rotation; // Get the rotation of the controller
-                obj1 = Instantiate(controller.gameObject.GetComponent<controllerCollision>().carEngineEnabled.gameObject.GetComponent<carEngineEnable>().rccCarEngine.gameObject, spawnPosition, spawnRotation);
-                GameManager.instance.rccCamera.GetComponent<RCCP_Camera>().cameraTarget.playerVehicle = obj1.GetComponent<RCCP_CarController>();
-                RCCP_SceneManager.Instance.activePlayerVehicle = obj1.GetComponent<RCCP_CarController>();
+                GameManager.instance.rccCamera.GetComponent<RCCP_Camera>().cameraTarget.playerVehicle = controller.GetComponentInParent<RCCP_CarController>();
+                RCCP_SceneManager.Instance.activePlayerVehicle = controller.GetComponentInParent<RCCP_CarController>();
+                MissionManager.Instance.GameElements.mapLine.GetComponent<MapLine>().startPoint = controller;
+                MissionManager.Instance.TurnSirenOn();
             }
             coroutineManager.instance.getIn("Collectable");
         }
@@ -63,37 +63,32 @@ public class controllerDetection : MonoBehaviour
         PlayerPrefs.SetInt("adShowMore", 5);
         if (controllerName == "Collectable")
         {
-            if (obj1)
+            if (FindObjectOfType<Handler>())
             {
-                obj1.GetComponent<Rigidbody>().drag = 3f;
-                Invoke("getOut", 1f);
+                PlayerPrefs.SetInt("adShowMore", 5);
+                FindObjectOfType<Handler>().showWaitInterstitial();
+                PlayerPrefs.SetInt("loadInterstitialAD", 5);
             }
+
+            if (FindObjectOfType<TimerScriptAD>())
+            {
+                FindObjectOfType<TimerScriptAD>().checkInterstitial();
+            }
+            controller.GetComponentInParent<Rigidbody>().drag = 3f;
+
+            Invoke("getOut", 1f);
         }
     }
     public void getOut()
     {
-        //if (FindObjectOfType<Handler>())
-        //{
-        //    FindObjectOfType<Handler>().ShowInterstitialAd();
-        //    PlayerPrefs.SetInt("loadInterstitialAD", 5);
-        //}
-
-        //if (FindObjectOfType<TimerScriptAD>())
-        //{
-        //    FindObjectOfType<TimerScriptAD>().checkInterstitial();
-        //}
         if (controllerName == "Collectable")
         {
-            if (obj1)
+            MissionManager.Instance.TurnSirenOff();
+            if (SoundManager.instance != null)
             {
-                Vector3 spawnPosition = obj1.transform.position;
-                Quaternion spawnRotation = obj1.transform.rotation;
-                controller.transform.parent.gameObject.transform.position = spawnPosition;
-                controller.transform.parent.gameObject.transform.rotation = spawnRotation;
-                controller.transform.parent.gameObject.SetActive(true);
-	            Destroy(obj1);
-	            //obj1.SetActive(false);
+                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
             }
+            MissionManager.Instance.GameElements.mapLine.GetComponent<MapLine>().startPoint = gameObject;
             GameManager.instance.setController(GameManager.instance.allControllers[0]);
             coroutineManager.instance.getOut("Collectable");
         }

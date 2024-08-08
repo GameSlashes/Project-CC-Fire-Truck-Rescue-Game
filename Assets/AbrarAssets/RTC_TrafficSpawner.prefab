@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8560429963856378922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8560429963856378920}
+  - component: {fileID: 8560429963856378921}
+  m_Layer: 0
+  m_Name: RTC_TrafficSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8560429963856378920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560429963856378922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8560429963856378921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560429963856378922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff50d296efb4034c85ae0b75d62e990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 0}
+  trafficVehicles:
+  - trafficVehicle: {fileID: 8138510888457140079, guid: 82e605412b7a6d2418680376988ec002, type: 3}
+    amount: 5
+  - trafficVehicle: {fileID: 2241451740639869236, guid: 426b31c7845ed9c44b7036eee27e3699, type: 3}
+    amount: 5
+  - trafficVehicle: {fileID: 3026064663840874943, guid: 68ecdbe36576df340857ab9080143c03, type: 3}
+    amount: 5
+  - trafficVehicle: {fileID: 6981330761862916166, guid: 8e32d97df28f2b04090f774f556ee828, type: 3}
+    amount: 5
+  - trafficVehicle: {fileID: 4915005644193110290, guid: a811680bc24c769449a5a436ef516580, type: 3}
+    amount: 5
+  - trafficVehicle: {fileID: 6263887838628099215, guid: 241bd1e004a8157459cb52d127068ceb, type: 3}
+    amount: 5
+  - trafficVehicle: {fileID: 4536133727299759071, guid: db7da72e4889f0c4286498d754e55b09, type: 3}
+    amount: 5
+  - trafficVehicle: {fileID: 4117655676481429768, guid: 1d46d55fe67c7b343b3c6dfc0b4543d1, type: 3}
+    amount: 5
+  - trafficVehicle: {fileID: 8138510888457140079, guid: 27bea509d971a8446a6250cb53c85c3d, type: 3}
+    amount: 5
+  maximumActiveVehicles: 2
+  radius: 300
+  closeRadius: 150
+  autoCalculateCloseRadius: 1
+  ignoreCloseRadiusOnEnable: 1
+  mainCamera: {fileID: 0}
+  checkMainCameraRuntime: 0
+  followType: 2
+  dontSpawnBehindCamera: 1
+  disableVehiclesBehindCamera: 1
+  distanceToDisable: 40
+  spawnedTrafficVehicles: []
+  container: {fileID: 0}
+  checkTrafficPerSecond: 1
+  isNight: 0
+  waypointsInRadius: []

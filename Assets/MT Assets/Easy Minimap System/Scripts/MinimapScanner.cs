@@ -356,68 +356,68 @@ namespace MTAssets.EasyMinimapSystem
             }
         }
 
-        //public void OnDrawGizmosSelected()
-        //{
-        //    //Set color of gizmos if not exists scan
-        //    if (textureResultOfScan == null)
-        //    {
-        //        //Gizmos.color = Color.red;
-        //        Handles.color = Color.red;
-        //    }
-        //    //Set color of gizmos if exists scan
-        //    if (textureResultOfScan != null)
-        //    {
-        //        //Gizmos.color = Color.blue;
-        //        Handles.color = Color.blue;
-        //    }
+        public void OnDrawGizmosSelected()
+        {
+            //Set color of gizmos if not exists scan
+            if (textureResultOfScan == null)
+            {
+                //Gizmos.color = Color.red;
+                Handles.color = Color.red;
+            }
+            //Set color of gizmos if exists scan
+            if (textureResultOfScan != null)
+            {
+                //Gizmos.color = Color.blue;
+                Handles.color = Color.blue;
+            }
 
-        //    //Get the current position
-        //    Vector3 position = this.gameObject.transform.position;
+            //Get the current position
+            Vector3 position = this.gameObject.transform.position;
 
-        //    //Calculate the 4 points of area
-        //    Vector3 bottomLeft = new Vector3(position.x, 0, position.z);
-        //    Vector3 topLeft = new Vector3(position.x, 0, position.z + GetSelectedScanArea());
-        //    Vector3 bottomRight = new Vector3(position.x + GetSelectedScanArea(), 0, position.z);
-        //    Vector3 topRight = new Vector3(position.x + GetSelectedScanArea(), 0, position.z + GetSelectedScanArea());
-        //    Vector3 center = new Vector3(position.x + GetSelectedScanArea() / 2, 0, position.z + GetSelectedScanArea() / 2);
+            //Calculate the 4 points of area
+            Vector3 bottomLeft = new Vector3(position.x, 0, position.z);
+            Vector3 topLeft = new Vector3(position.x, 0, position.z + GetSelectedScanArea());
+            Vector3 bottomRight = new Vector3(position.x + GetSelectedScanArea(), 0, position.z);
+            Vector3 topRight = new Vector3(position.x + GetSelectedScanArea(), 0, position.z + GetSelectedScanArea());
+            Vector3 center = new Vector3(position.x + GetSelectedScanArea() / 2, 0, position.z + GetSelectedScanArea() / 2);
 
-        //    //Show the 4 points
-        //    //Gizmos.DrawSphere(bottomLeft, 0.5f);
-        //    //Gizmos.DrawSphere(topLeft, 0.5f);
-        //    //Gizmos.DrawSphere(bottomRight, 0.5f);
-        //    //Gizmos.DrawSphere(topRight, 0.5f);
-        //    //Gizmos.DrawWireSphere(center, 0.5f);
+            //Show the 4 points
+            Gizmos.DrawSphere(bottomLeft, 0.5f);
+            Gizmos.DrawSphere(topLeft, 0.5f);
+            Gizmos.DrawSphere(bottomRight, 0.5f);
+            Gizmos.DrawSphere(topRight, 0.5f);
+            Gizmos.DrawWireSphere(center, 0.5f);
 
-        //    //Show the lines
-        //    Handles.DrawAAPolyLine(5f, new Vector3[] { bottomLeft, topLeft, topRight, bottomRight, bottomLeft });
-        //    Vector3 scanHeightVector3 = new Vector3(0, scanHeight, 0);
-        //    Color colorBefore = Handles.color;
-        //    Handles.color = Color.white;
-        //    Color solidColor = colorBefore;
-        //    solidColor.a = 0.10f;
-        //    Handles.DrawSolidRectangleWithOutline(new Vector3[] { bottomLeft + scanHeightVector3, topLeft + scanHeightVector3, topRight + scanHeightVector3, bottomRight + scanHeightVector3 },
-        //                                          solidColor, colorBefore);
-        //    Handles.color = colorBefore;
-        //    Color linesColor = colorBefore;
-        //    linesColor.a = 0.30f;
-        //    Handles.color = linesColor;
-        //    Handles.DrawLine(bottomLeft + scanHeightVector3, bottomLeft + (Vector3.down * MAX_SCAN_HEIGHT));
-        //    Handles.DrawLine(topLeft + scanHeightVector3, topLeft + (Vector3.down * MAX_SCAN_HEIGHT));
-        //    Handles.DrawLine(bottomRight + scanHeightVector3, bottomRight + (Vector3.down * MAX_SCAN_HEIGHT));
-        //    Handles.DrawLine(topRight + scanHeightVector3, topRight + (Vector3.down * MAX_SCAN_HEIGHT));
-        //    Handles.DrawSolidRectangleWithOutline(new Vector3[] { bottomLeft + (Vector3.down * MAX_SCAN_HEIGHT), topLeft + (Vector3.down * MAX_SCAN_HEIGHT), topRight + (Vector3.down * MAX_SCAN_HEIGHT), bottomRight + (Vector3.down * MAX_SCAN_HEIGHT) },
-        //                                      Color.clear, colorBefore);
+            //Show the lines
+            Handles.DrawAAPolyLine(5f, new Vector3[] { bottomLeft, topLeft, topRight, bottomRight, bottomLeft });
+            Vector3 scanHeightVector3 = new Vector3(0, scanHeight, 0);
+            Color colorBefore = Handles.color;
+            Handles.color = Color.white;
+            Color solidColor = colorBefore;
+            solidColor.a = 0.10f;
+            Handles.DrawSolidRectangleWithOutline(new Vector3[] { bottomLeft + scanHeightVector3, topLeft + scanHeightVector3, topRight + scanHeightVector3, bottomRight + scanHeightVector3 },
+                                                  solidColor, colorBefore);
+            Handles.color = colorBefore;
+            Color linesColor = colorBefore;
+            linesColor.a = 0.30f;
+            Handles.color = linesColor;
+            Handles.DrawLine(bottomLeft + scanHeightVector3, bottomLeft + (Vector3.down * MAX_SCAN_HEIGHT));
+            Handles.DrawLine(topLeft + scanHeightVector3, topLeft + (Vector3.down * MAX_SCAN_HEIGHT));
+            Handles.DrawLine(bottomRight + scanHeightVector3, bottomRight + (Vector3.down * MAX_SCAN_HEIGHT));
+            Handles.DrawLine(topRight + scanHeightVector3, topRight + (Vector3.down * MAX_SCAN_HEIGHT));
+            Handles.DrawSolidRectangleWithOutline(new Vector3[] { bottomLeft + (Vector3.down * MAX_SCAN_HEIGHT), topLeft + (Vector3.down * MAX_SCAN_HEIGHT), topRight + (Vector3.down * MAX_SCAN_HEIGHT), bottomRight + (Vector3.down * MAX_SCAN_HEIGHT) },
+                                              Color.clear, colorBefore);
 
-        //    //Draw meters indicator
-        //    Handles.Label(topLeft, "(" + GetSelectedScanArea().ToString() + " Units)");
-        //    Handles.Label(bottomRight, "(" + GetSelectedScanArea().ToString() + " Units)");
-        //    GUIStyle style = new GUIStyle();
-        //    style.normal.textColor = Color.white;
-        //    style.alignment = TextAnchor.MiddleCenter;
-        //    style.fontStyle = FontStyle.Bold;
-        //    style.contentOffset = new Vector2(-20, 0);
-        //    Handles.Label(center + scanHeightVector3, "Scan Height\n(" + scanHeight.ToString("F1") + " Units)", style);
-        ////}
+            //Draw meters indicator
+            Handles.Label(topLeft, "(" + GetSelectedScanArea().ToString() + " Units)");
+            Handles.Label(bottomRight, "(" + GetSelectedScanArea().ToString() + " Units)");
+            GUIStyle style = new GUIStyle();
+            style.normal.textColor = Color.white;
+            style.alignment = TextAnchor.MiddleCenter;
+            style.fontStyle = FontStyle.Bold;
+            style.contentOffset = new Vector2(-20, 0);
+            Handles.Label(center + scanHeightVector3, "Scan Height\n(" + scanHeight.ToString("F1") + " Units)", style);
+        }
         #endregion
 #endif
 

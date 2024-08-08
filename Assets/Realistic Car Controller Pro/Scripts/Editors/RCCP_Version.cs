@@ -17,6 +17,6 @@ using System.Collections.Generic;
 [Icon("Assets/Realistic Car Controller Pro/Resources/Editor Icons/RCCP_EditorIcon_Manager.png")]
 public class RCCP_Version {
 
-    public const string version = "V1.44.2";
+    public const string version = "V1.50.0";
 
 }

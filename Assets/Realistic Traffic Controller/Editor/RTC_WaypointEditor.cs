@@ -21,42 +21,43 @@ public class RTC_WaypointEditor : Editor {
     static bool listCloserWaypoints;
 
     [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected | GizmoType.Pickable)]
-    public static void OnDrawSceneGizmos(RTC_Waypoint waypoint, GizmoType gizmoType) {
+    public static void OnDrawSceneGizmos(RTC_Waypoint waypoint, GizmoType gizmoType)
+    {
 
-        if (!waypoint.ignoreGizmos) {
+        //if (!waypoint.ignoreGizmos) {
 
-            if ((gizmoType & GizmoType.Selected) != 0) {
+        //    if ((gizmoType & GizmoType.Selected) != 0) {
 
-                Gizmos.color = RTC_Settings.Instance.selectedWaypointColor;
+        //        Gizmos.color = RTC_Settings.Instance.selectedWaypointColor;
 
-            } else {
+        //    } else {
 
-                if (waypoint.firstWaypoint)
-                    Gizmos.color = RTC_Settings.Instance.firstWaypointColor;
-                else if (waypoint.lastWaypoint)
-                    Gizmos.color = RTC_Settings.Instance.lastWaypointColor;
-                else
-                    Gizmos.color = RTC_Settings.Instance.unselectedWaypointColor;
+        //        if (waypoint.firstWaypoint)
+        //            Gizmos.color = RTC_Settings.Instance.firstWaypointColor;
+        //        else if (waypoint.lastWaypoint)
+        //            Gizmos.color = RTC_Settings.Instance.lastWaypointColor;
+        //        else
+        //            Gizmos.color = RTC_Settings.Instance.unselectedWaypointColor;
 
-                Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, .5f);
+        //        Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, .5f);
 
-            }
+        //    }
 
-            Gizmos.DrawSphere(waypoint.transform.position, waypoint.radius);
+        //    Gizmos.DrawSphere(waypoint.transform.position, waypoint.radius);
 
-            GUIStyle style = new GUIStyle();
-            style.normal.textColor = RTC_Settings.Instance.textColor;
+        //    GUIStyle style = new GUIStyle();
+        //    style.normal.textColor = RTC_Settings.Instance.textColor;
 
-            if (SceneView.lastActiveSceneView && Vector3.Distance(waypoint.transform.position, SceneView.lastActiveSceneView.camera.transform.position) < RTC_Settings.Instance.textDistance)
-                Handles.Label((waypoint.transform.position + Vector3.up * 3f) + (Vector3.forward * -0f), waypoint.transform.parent.name + "_" + (waypoint.transform.GetSiblingIndex() + 0).ToString(), style);
+        //    if (SceneView.lastActiveSceneView && Vector3.Distance(waypoint.transform.position, SceneView.lastActiveSceneView.camera.transform.position) < RTC_Settings.Instance.textDistance)
+        //        Handles.Label((waypoint.transform.position + Vector3.up * 3f) + (Vector3.forward * -0f), waypoint.transform.parent.name + "_" + (waypoint.transform.GetSiblingIndex() + 0).ToString(), style);
 
-        }
+        //}
 
-        Gizmos.matrix = waypoint.transform.localToWorldMatrix;
-        Gizmos.color = RTC_Settings.Instance.arrowColor;
+        //Gizmos.matrix = waypoint.transform.localToWorldMatrix;
+        //Gizmos.color = RTC_Settings.Instance.arrowColor;
 
-        if (waypoint.previousWaypoint)
-            Gizmos.DrawMesh((Mesh)Resources.Load("Arrow", typeof(Mesh)), waypoint.transform.InverseTransformPoint(Vector3.Lerp(waypoint.transform.position, waypoint.previousWaypoint.transform.position, .5f) + Vector3.up * 2f), Quaternion.identity, new Vector3(3f, 3f, 3f));
+        //if (waypoint.previousWaypoint)
+        //    Gizmos.DrawMesh((Mesh)Resources.Load("Arrow", typeof(Mesh)), waypoint.transform.InverseTransformPoint(Vector3.Lerp(waypoint.transform.position, waypoint.previousWaypoint.transform.position, .5f) + Vector3.up * 2f), Quaternion.identity, new Vector3(3f, 3f, 3f));
 
     }
 
@@ -126,12 +127,12 @@ public class RTC_WaypointEditor : Editor {
                     else
                         waypointBehind = true;
 
-                    if (!waypoints[i].ignoreGizmos && !waypointBehind && waypoints[i] != prop && Vector3.Distance(waypoints[i].transform.position, prop.transform.position) < 30f)
+                    if (!waypoints[i].ignoreGizmos && !waypointBehind && waypoints[i] != prop && Vector3.Distance(waypoints[i].transform.position, prop.transform.position) <= 30f)
                         closestWaypoints.Add(waypoints[i]);
 
                 }
 
-                for (int i = closestWaypoints.Count - 1; i > 0; i--) {
+                for (int i = closestWaypoints.Count - 1; i >= 0; i--) {
 
                     EditorGUILayout.BeginHorizontal(GUI.skin.box);
 

@@ -102,7 +102,7 @@ public class RTC_TrafficSpawner : RTC_Core {
 
     //  Spawned traffic vehicles list and container for them.
     public List<RTC_CarController> spawnedTrafficVehicles = new List<RTC_CarController>();
-    private Transform container;
+    public Transform container;
 
     /// <summary>
     /// Checks all traffic vehicles once in per second.
@@ -122,15 +122,16 @@ public class RTC_TrafficSpawner : RTC_Core {
     public static event onSpawnerSpawned OnSpawnerSpawned;
 
     //  Creating a list for waypoints in radius.
-    public List<RTC_Waypoint> waypointsInRadius = new List<RTC_Waypoint>();
+    public List<RTC_Waypoint> waypointsInRadius = new List<RTC_Waypoint>(); 
+    //  Creating a list for waypoints in radius.
 
     private void Awake() {
 
         //  Creating or finding container for spawned traffic vehicles.
-        if (GameObject.Find("RTC_TrafficVehiclesContainer"))
-            container = GameObject.Find("RTC_TrafficVehiclesContainer").transform;
-        else
-            container = new GameObject("RTC_TrafficVehiclesContainer").transform;
+        //if (GameObject.Find("RTC_TrafficVehiclesContainer"))
+        //    container = GameObject.Find("RTC_TrafficVehiclesContainer").transform;
+        //else
+        //    container = new GameObject("RTC_TrafficVehiclesContainer").transform;
 
         container.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
 

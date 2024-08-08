@@ -440,10 +440,10 @@ public class RCCP_WelcomeWindow : EditorWindow {
 
 //#else
 
-//        EditorGUILayout.HelpBox("If you want to add enter exit scenes, you have to import latest BCG Shared Assets to your project first.", MessageType.Warning);
+        //EditorGUILayout.HelpBox("If you want to add enter exit scenes, you have to import latest BCG Shared Assets to your project first.", MessageType.Warning);
 
-//        if (GUILayout.Button("Download and import BCG Shared Assets"))
-//            AssetDatabase.ImportPackage(RCCP_AddonPackages.Instance.GetAssetPath(RCCP_AddonPackages.Instance.BCGSharedAssets), true);
+        //if (GUILayout.Button("Download and import BCG Shared Assets"))
+        //    AssetDatabase.ImportPackage(RCCP_AddonPackages.Instance.GetAssetPath(RCCP_AddonPackages.Instance.BCGSharedAssets), true);
 
 //#endif
 

@@ -50,7 +50,7 @@ public class GraphicSetting : MonoBehaviour
             PlayerPrefs.SetString("QualityLevel", "Low");
 
             if (SoundManager.instance)
-                SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
 
             acticveLowGraphics();
         }
@@ -59,7 +59,7 @@ public class GraphicSetting : MonoBehaviour
             QualitySettings.SetQualityLevel(3);
             PlayerPrefs.SetString("QualityLevel", "Medium");
             if (SoundManager.instance)
-                SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
             acticveMediumGraphics();
 
 
@@ -69,7 +69,7 @@ public class GraphicSetting : MonoBehaviour
             QualitySettings.SetQualityLevel(4);
             PlayerPrefs.SetString("QualityLevel", "High");
             if (SoundManager.instance)
-                SoundManager.instance.onButtonClickSound(SoundManager.instance.buttonMainSound);
+                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
             acticveHighGraphics();
 
 
