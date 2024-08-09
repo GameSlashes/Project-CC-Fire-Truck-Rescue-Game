@@ -197,6 +197,40 @@ public class MissionManager : MonoBehaviour
         stopTimer.isMission = false;
         stopTimer.myFloat = 30;
         trafficCars.SetActive(true);
+
+
+        playBtnSound();
+        Time.timeScale = 1;
+        ResetMissionUI();
+        Missions[currentMissionIndex].MissionObject.SetActive(false);
+
+        var firefighterManager = FireFighterManager.instance;
+        if (firefighterManager != null)
+        {
+            if (firefighterManager.debugMode) Debug.Log("Fail mission actions...");
+
+            firefighterManager.itemManager.UnequipCurrentEquipedItem(0);
+
+            firefighterManager.SetWaterActive(false);
+            firefighterManager.waterButton.SetActive(false);
+            firefighterManager.SetPipeActive(false);
+
+            if (firefighterManager.isFirePipeActive)
+            {
+                firefighterManager.TogglePipeState();
+            }
+
+            if (firefighterManager.debugMode)
+            {
+                Debug.Log("Water state set to false.");
+                Debug.Log("Water button deactivated.");
+                Debug.Log("Pipe state set to false.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("FireFighterManager instance is null.");
+        }
     }
 
     public void CompleteMission()
@@ -216,7 +250,7 @@ public class MissionManager : MonoBehaviour
     private IEnumerator ShowDialogue(GameObject initialText, GameObject finalText)
     {
         yield return new WaitForSeconds(3f);
-        Time.timeScale = 0.3f;
+        Time.timeScale = 1;
         initialText.SetActive(false);
         finalText.SetActive(true);
     }

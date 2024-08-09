@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: CleverCrabs
-  productName: Fire Truck Driving Sim Games
+  companyName: MyCompany
+  productName: Fire Truck
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -156,9 +156,10 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.cc.firefigther.truck.rescue.simulator.games
+    Android: com.test.games
   buildNumber:
     Standalone: 0
+    VisionOS: 0
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
@@ -258,7 +259,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 1
+  androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -809,8 +810,10 @@ PlayerSettings:
     Nintendo Switch: BCG_RCCP;RCCP_DEMO;BCG_ENTEREXIT;BCG_RTRC;BCG_NEWINPUTSYSTEM;UNITY_POST_PROCESSING_STACK_V2
     PS4: BCG_RCCP;RCCP_DEMO;BCG_ENTEREXIT;BCG_RTRC;BCG_NEWINPUTSYSTEM;UNITY_POST_PROCESSING_STACK_V2
     PS5: BCG_RCCP;RCCP_DEMO;BCG_ENTEREXIT;BCG_RTRC;BCG_NEWINPUTSYSTEM;UNITY_POST_PROCESSING_STACK_V2
+    QNX: RCCP_DEMO;BCG_RTRC
     Stadia: BCG_RCCP;RCCP_DEMO;BCG_ENTEREXIT;BCG_RTRC;BCG_NEWINPUTSYSTEM;UNITY_POST_PROCESSING_STACK_V2
     Standalone: BCG_RCCP;RCCP_DEMO;BCG_ENTEREXIT;OBI_ONI_SUPPORTED;CROSS_PLATFORM_INPUT;BCG_RTRC;BCG_NEWINPUTSYSTEM;UNITY_POST_PROCESSING_STACK_V2;INVECTOR_BASIC;INVECTOR_MELEE;INVECTOR_SHOOTER
+    VisionOS: RCCP_DEMO;BCG_RTRC
     WebGL: BCG_RCCP;RCCP_DEMO;BCG_ENTEREXIT;BCG_RTRC;BCG_NEWINPUTSYSTEM;UNITY_POST_PROCESSING_STACK_V2
     Windows Store Apps: BCG_RCCP;RCCP_DEMO;BCG_ENTEREXIT;MOBILE_INPUT;BCG_RTRC;BCG_NEWINPUTSYSTEM;UNITY_POST_PROCESSING_STACK_V2
     XboxOne: BCG_RCCP;RCCP_DEMO;BCG_ENTEREXIT;BCG_RTRC;BCG_NEWINPUTSYSTEM;UNITY_POST_PROCESSING_STACK_V2

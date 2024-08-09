@@ -74,7 +74,10 @@ public class controllerDetection : MonoBehaviour
             {
                 FindObjectOfType<TimerScriptAD>().checkInterstitial();
             }
-            controller.GetComponentInParent<Rigidbody>().drag = 3f;
+
+            controller.GetComponentInParent<Rigidbody>().drag = 5f;
+            controller.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
+            controller.GetComponentInParent<Rigidbody>().angularVelocity = Vector3.zero;
 
             Invoke("getOut", 1f);
         }
@@ -84,6 +87,11 @@ public class controllerDetection : MonoBehaviour
         if (controllerName == "Collectable")
         {
             MissionManager.Instance.TurnSirenOff();
+
+            controller.GetComponentInParent<Rigidbody>().drag = 5f;
+            controller.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
+            controller.GetComponentInParent<Rigidbody>().angularVelocity = Vector3.zero;
+
             if (SoundManager.instance != null)
             {
                 SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
