@@ -2,106 +2,104 @@
 
 public class GraphicSetting : MonoBehaviour
 {
-
     [Header("Graphics")]
     public GameObject[] lowGraphic;
     public GameObject[] mediumGraphic;
     public GameObject[] highGraphic;
 
-
     private void OnEnable()
     {
-        loadGraphic();
+        LoadGraphics();
     }
 
-    public void acticveLowGraphics()
+    public void ActivateLowGraphics()
     {
-        lowGraphic[0].SetActive(true);
-        lowGraphic[1].SetActive(false);
-        mediumGraphic[0].SetActive(false);
-        mediumGraphic[1].SetActive(true);
-        highGraphic[0].SetActive(false);
-        highGraphic[0].SetActive(true);
-    }
-    public void acticveMediumGraphics()
-    {
-        lowGraphic[0].SetActive(false);
-        lowGraphic[1].SetActive(true);
-        mediumGraphic[0].SetActive(true);
-        mediumGraphic[1].SetActive(false);
-        highGraphic[0].SetActive(true);
-        highGraphic[0].SetActive(false);
-    }
-    public void acticveHighGraphics()
-    {
-        lowGraphic[0].SetActive(false);
-        lowGraphic[1].SetActive(true);
-        mediumGraphic[0].SetActive(false);
-        mediumGraphic[1].SetActive(true);
-        highGraphic[0].SetActive(true);
-        highGraphic[1].SetActive(false);
+        SetGraphicsState(lowGraphic, true);
+        SetGraphicsState(mediumGraphic, false);
+        SetGraphicsState(highGraphic, false);
     }
 
-    public void updateGraphics(int graphicID)
+    public void ActivateMediumGraphics()
     {
-        if (graphicID == 0)
+        SetGraphicsState(lowGraphic, false);
+        SetGraphicsState(mediumGraphic, true);
+        SetGraphicsState(highGraphic, false);
+    }
+
+    public void ActivateHighGraphics()
+    {
+        SetGraphicsState(lowGraphic, false);
+        SetGraphicsState(mediumGraphic, false);
+        SetGraphicsState(highGraphic, true);
+    }
+
+    public void SetGraphicsQuality(int qualityID)
+    {
+        string qualityLevel;
+
+        switch (qualityID)
         {
-            QualitySettings.SetQualityLevel(1);
-            PlayerPrefs.SetString("QualityLevel", "Low");
-
-            if (SoundManager.instance)
-                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
-
-            acticveLowGraphics();
+            case 0:
+                QualitySettings.SetQualityLevel(0); // Use appropriate index based on your quality levels
+                qualityLevel = "Low";
+                ActivateLowGraphics();
+                break;
+            case 1:
+                QualitySettings.SetQualityLevel(2); // Use appropriate index based on your quality levels
+                qualityLevel = "Medium";
+                ActivateMediumGraphics();
+                break;
+            case 2:
+                QualitySettings.SetQualityLevel(4); // Use appropriate index based on your quality levels
+                qualityLevel = "High";
+                ActivateHighGraphics();
+                break;
+            default:
+                qualityLevel = "High";
+                break;
         }
-        else if (graphicID == 1)
+
+        PlayerPrefs.SetString("QualityLevel", qualityLevel);
+
+        if (SoundManager.instance)
         {
-            QualitySettings.SetQualityLevel(3);
-            PlayerPrefs.SetString("QualityLevel", "Medium");
-            if (SoundManager.instance)
-                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
-            acticveMediumGraphics();
-
-
-        }
-        else if (graphicID == 2)
-        {
-            QualitySettings.SetQualityLevel(4);
-            PlayerPrefs.SetString("QualityLevel", "High");
-            if (SoundManager.instance)
-                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
-            acticveHighGraphics();
-
-
+            SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
         }
     }
-    public void loadGraphic()
+
+    private void LoadGraphics()
     {
         if (PlayerPrefs.HasKey("QualityLevel"))
         {
-            if (PlayerPrefs.GetString("QualityLevel") == "Low")
+            string qualityLevel = PlayerPrefs.GetString("QualityLevel");
+
+            switch (qualityLevel)
             {
-                QualitySettings.SetQualityLevel(1);
-                acticveLowGraphics();
-            }
-            else if (PlayerPrefs.GetString("QualityLevel") == "Medium")
-            {
-                QualitySettings.SetQualityLevel(3);
-                acticveMediumGraphics();
-
-
-            }
-            else if (PlayerPrefs.GetString("QualityLevel") == "High")
-            {
-                QualitySettings.SetQualityLevel(4);
-                acticveHighGraphics();
-
-
+                case "Low":
+                    SetGraphicsQuality(0);
+                    break;
+                case "Medium":
+                    SetGraphicsQuality(1);
+                    break;
+                case "High":
+                    SetGraphicsQuality(2);
+                    break;
+                default:
+                    SetGraphicsQuality(2); // Default to High if an unknown value is found
+                    break;
             }
         }
-        else if (!PlayerPrefs.HasKey("QualityLevel"))
+        else
         {
-            updateGraphics(2);
+            SetGraphicsQuality(2); // Default to High if no key is found
+        }
+    }
+
+    private void SetGraphicsState(GameObject[] graphics, bool state)
+    {
+        foreach (var graphic in graphics)
+        {
+            graphic.SetActive(state);
         }
     }
 }

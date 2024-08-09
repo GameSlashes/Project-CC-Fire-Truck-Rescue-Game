@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
         //    FindObjectOfType<Handler>().Show_SmallBanner1();
         //    FindObjectOfType<Handler>().Show_SmallBanner2();
         //}
+        if(SoundManager.instance)
         SoundManager.instance.PlayGamePlaySound();
     }
 

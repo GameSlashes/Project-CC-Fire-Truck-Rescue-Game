@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Drawing;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -113,6 +114,8 @@ public class MissionManager : MonoBehaviour
             GameElements.CoinRewardText.text = mission.CoinReward.ToString();
         }
         players = myCar.GetComponent<RCCP_CarController>();
+        players.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        players.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         count = 6;
         GameElements.timerText.text = $"{count} seconds";
         flag = true;
@@ -203,6 +206,10 @@ public class MissionManager : MonoBehaviour
         Time.timeScale = 1;
         ResetMissionUI();
         Missions[currentMissionIndex].MissionObject.SetActive(false);
+        GameElements.fireAmount.text = "0";
+        GameElements.fireAmountToDone.text = "0";
+        GameElements.rescueManToDone.text = "0";
+        GameElements.rescueMan.text = "0";
 
         var firefighterManager = FireFighterManager.instance;
         if (firefighterManager != null)
@@ -245,6 +252,12 @@ public class MissionManager : MonoBehaviour
         StartCoroutine(ShowDialogue(GameElements.MissionCompleteText, GameElements.MissionComplete));
         isTimerEnabled = false;
         stopTimer.isMission = false;
+
+        GameElements.fireAmount.text = "0";
+        GameElements.fireAmountToDone.text = "0";
+        GameElements.rescueManToDone.text = "0";
+        GameElements.rescueMan.text = "0";
+
     }
 
     private IEnumerator ShowDialogue(GameObject initialText, GameObject finalText)
@@ -324,7 +337,10 @@ public class MissionManager : MonoBehaviour
         GameElements.ObjectivePanel.SetActive(false);
         GameElements.Timer.SetActive(false);
         isTimerEnabled = false;
-        stopTimer.myFloat = 50;
+        stopTimer.myFloat = 30;
+        stopTimer.isMission = false;
+        GameElements.MissionInitialization.SetActive(false);
+        flag = false;
     }
 
     private void OnNextMission()
@@ -366,15 +382,12 @@ public class MissionManager : MonoBehaviour
         missionTime = mission.Minutes * 60 + mission.Seconds;
         GameElements.Timer.SetActive(mission.IsTimeBased);
         isTimerEnabled = mission.IsTimeBased;
-        //GameElements.ObjectivePanel.SetActive(!string.IsNullOrEmpty(mission.Objectives));
-        //GameElements.ObjectiveText.text = mission.Objectives;
     }
 
     private void ResetMissionUI()
     {
         GameElements.MissionCompleteText.SetActive(false);
         GameElements.MissionComplete.SetActive(false);
-        //GameElements.Timer.SetActive(false);
         isTimerEnabled = false;
     }
 

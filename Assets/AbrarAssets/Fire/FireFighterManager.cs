@@ -176,7 +176,7 @@ public class FireFighterManager : MonoBehaviour
     }
     public void SetEquipId()
     {
-        Debug.Log(itemManager);
+        //Debug.Log(itemManager);
         itemManager.UnequipCurrentEquipedItem(0);
         itemManager.EquipItemToEquipSlot(0, 0, Rifle);
         MissionManager.Instance.GameElements.mapLine.GetComponent<MapLine>().endPoint = MissionManager.Instance.Missions[MissionManager.Instance.currentMissionIndex].missionDataObjectData[2].objTOActivate.gameObject;

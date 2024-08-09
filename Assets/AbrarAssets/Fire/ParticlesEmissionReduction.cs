@@ -73,7 +73,7 @@ public class ParticlesEmissionReduction : MonoBehaviour
 
         if (callItOnce)
         {
-            Debug.Log("Current fire amount: " + currentMission.fireAmount);
+            //Debug.Log("Current fire amount: " + currentMission.fireAmount);
             currentMission.fireAmount++;
             missionManager.GameElements.fireAmount.text = currentMission.fireAmount.ToString();
             GetComponent<AudioSource>().enabled = false;
@@ -137,11 +137,11 @@ public class ParticlesEmissionReduction : MonoBehaviour
         if (missionManager != null)
         {
             missionManager.CompleteMission();
-            Debug.Log("Mission completed.");
+            //Debug.Log("Mission completed.");
         }
         else
         {
-            Debug.LogWarning("MissionManager instance is null.");
+            //Debug.LogWarning("MissionManager instance is null.");
         }
     }
 

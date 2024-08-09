@@ -14,6 +14,7 @@ public class OnTrigger : MonoBehaviour
         // Ensure the other object is tagged as Player
         if (other.CompareTag("Player")&& !isFun)
         {
+            //Debug.Log("1");
             HandlePlayerExit(other);
         }
     }
@@ -31,8 +32,6 @@ public class OnTrigger : MonoBehaviour
             return;
         }
 
-        exitMyPlayer.getOut();
-
         // Cache the Rigidbody component and set drag
         Rigidbody playerRigidbody = playerCollider.gameObject.GetComponent<Rigidbody>();
         if (playerRigidbody != null)
@@ -41,6 +40,10 @@ public class OnTrigger : MonoBehaviour
             playerRigidbody.velocity = Vector3.zero;
             playerRigidbody.angularVelocity = Vector3.zero;
         }
+
+        exitMyPlayer.getOut();
+
+
 
         UpdateMapLine();
 
