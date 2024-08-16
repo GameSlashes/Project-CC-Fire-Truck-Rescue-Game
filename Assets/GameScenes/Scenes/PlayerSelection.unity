@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29929757, g: 0.42091724, b: 0.4962388, a: 1}
+  m_IndirectSpecularColor: {r: 0.29930413, g: 0.42088616, b: 0.49617818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3865,15 +3865,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 174985156611132527, guid: 4a114c737e4e7774c8396809e0f29f98, type: 3}
       propertyPath: Players.Array.data[1].UnlockThroughCoins
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 174985156611132527, guid: 4a114c737e4e7774c8396809e0f29f98, type: 3}
       propertyPath: Players.Array.data[2].UnlockThroughCoins
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 174985156611132527, guid: 4a114c737e4e7774c8396809e0f29f98, type: 3}
       propertyPath: Players.Array.data[3].UnlockThroughCoins
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 174985156611132527, guid: 4a114c737e4e7774c8396809e0f29f98, type: 3}
       propertyPath: Players.Array.data[0].UnlockThroughWatchVideo
@@ -3881,15 +3881,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 174985156611132527, guid: 4a114c737e4e7774c8396809e0f29f98, type: 3}
       propertyPath: Players.Array.data[1].UnlockThroughWatchVideo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 174985156611132527, guid: 4a114c737e4e7774c8396809e0f29f98, type: 3}
       propertyPath: Players.Array.data[2].UnlockThroughWatchVideo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 174985156611132527, guid: 4a114c737e4e7774c8396809e0f29f98, type: 3}
       propertyPath: Players.Array.data[3].UnlockThroughWatchVideo
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 174985156611132527, guid: 4a114c737e4e7774c8396809e0f29f98, type: 3}
       propertyPath: onCustomization.m_PersistentCalls.m_Calls.Array.size

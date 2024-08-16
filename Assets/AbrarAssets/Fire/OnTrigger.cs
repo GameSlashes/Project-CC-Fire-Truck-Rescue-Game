@@ -1,5 +1,6 @@
-using System.Reflection;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class OnTrigger : MonoBehaviour
 {
@@ -25,31 +26,48 @@ public class OnTrigger : MonoBehaviour
     /// <param name="playerCollider">The collider of the player object.</param>
     private void HandlePlayerExit(Collider playerCollider)
     {
-        // Ensure all required components and objects are set
         if (exitMyPlayer == null || startPoint == null || endPoint == null)
         {
             Debug.LogError("Required components are not assigned.");
             return;
         }
 
-        // Cache the Rigidbody component and set drag
         Rigidbody playerRigidbody = playerCollider.gameObject.GetComponent<Rigidbody>();
         if (playerRigidbody != null)
         {
-            playerRigidbody.drag = 15f;
-            playerRigidbody.velocity = Vector3.zero;
-            playerRigidbody.angularVelocity = Vector3.zero;
+            // Gradually reduce the velocity
+            StartCoroutine(GraduallyStopRigidbody(playerRigidbody));
         }
 
         exitMyPlayer.getOut();
-
-
-
         UpdateMapLine();
-
-        // Deactivate this game object
         gameObject.SetActive(false);
     }
+
+    private IEnumerator GraduallyStopRigidbody(Rigidbody rb)
+    {
+        float duration = 0.5f; // Time to gradually stop the movement
+        float elapsed = 0f;
+
+        Vector3 initialVelocity = rb.velocity;
+        Vector3 initialAngularVelocity = rb.angularVelocity;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            rb.velocity = Vector3.Lerp(initialVelocity, Vector3.zero, t);
+            rb.angularVelocity = Vector3.Lerp(initialAngularVelocity, Vector3.zero, t);
+
+            yield return null;
+        }
+
+        // Ensure final velocity is exactly zero
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+    }
+
     public void UpdateMapLine()
     {
         // Set start and end points for the MapLine

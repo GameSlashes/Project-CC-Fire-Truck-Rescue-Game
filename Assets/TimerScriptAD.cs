@@ -24,21 +24,15 @@ public class TimerScriptAD : MonoBehaviour
             if (myFloat < 10 && myFloat > 0)
             {
                 showAD = false;
-                if (showAD_1)
+                if (PlayerPrefs.GetInt("RateUsStatus") != 0)
                 {
-                    Time.timeScale = .3f;
-                    adObject.SetActive(true);
-                    showAD_1 = false;
+                    if (showAD_1)
+                    {
+                        Time.timeScale = .3f;
+                        adObject.SetActive(true);
+                        showAD_1 = false;
+                    }
                 }
-                //if (PlayerPrefs.GetInt("RateUsStatus") != 0)
-                //{
-                //    if (showAD_1)
-                //    {
-                //        Time.timeScale = .3f;
-                //        adObject.SetActive(true);
-                //        showAD_1 = false;
-                //    }
-                //}
 
             }
             else if (myFloat <= 0)
@@ -46,13 +40,13 @@ public class TimerScriptAD : MonoBehaviour
                 showAD = true;
                 showAD_1 = true;
                 afterRateUs();
-                //if (PlayerPrefs.GetInt("RateUsStatus") == 0)
-                //{
-                //    if (rateUsManager.instance)
-                //    {
-                //        rateUsManager.instance.activeRateUs();
-                //    }
-                //}
+                if (PlayerPrefs.GetInt("RateUsStatus") == 0)
+                {
+                    if (rateUsManager.instance)
+                    {
+                        rateUsManager.instance.activeRateUs();
+                    }
+                }
                 //adObject.SetActive(false);
             }
             else if (myFloat > 10)

@@ -28,12 +28,12 @@ public class controllerDetection : MonoBehaviour
 
     public void getInBtn()
     {
-        //if (FindObjectOfType<Handler>())
-        //{
-        //    PlayerPrefs.SetInt("adShowMore", 5);
-        //    FindObjectOfType<Handler>().showWaitInterstitial();
-        //    PlayerPrefs.SetInt("loadInterstitialAD", 5);
-        //}
+        if (FindObjectOfType<Handler>())
+        {
+            PlayerPrefs.SetInt("adShowMore", 5);
+            FindObjectOfType<Handler>().showWaitInterstitial();
+            PlayerPrefs.SetInt("loadInterstitialAD", 5);
+        }
         if (SoundManager.instance != null)
         {
             SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
@@ -48,6 +48,7 @@ public class controllerDetection : MonoBehaviour
             if (controller)
             {
                 controller.GetComponentInParent<Rigidbody>().drag = 0.01f;
+                controller.GetComponentInParent<Rigidbody>().isKinematic = false;
                 GameManager.instance.setController(GameManager.instance.allControllers[1]);
                 GameManager.instance.rccCamera.GetComponent<RCCP_Camera>().cameraTarget.playerVehicle = controller.GetComponentInParent<RCCP_CarController>();
                 RCCP_SceneManager.Instance.activePlayerVehicle = controller.GetComponentInParent<RCCP_CarController>();
@@ -63,18 +64,17 @@ public class controllerDetection : MonoBehaviour
         PlayerPrefs.SetInt("adShowMore", 5);
         if (controllerName == "Collectable")
         {
-            //if (FindObjectOfType<Handler>())
-            //{
-            //    PlayerPrefs.SetInt("adShowMore", 5);
-            //    FindObjectOfType<Handler>().showWaitInterstitial();
-            //    PlayerPrefs.SetInt("loadInterstitialAD", 5);
-            //}
+            if (FindObjectOfType<Handler>())
+            {
+                PlayerPrefs.SetInt("adShowMore", 5);
+                FindObjectOfType<Handler>().showWaitInterstitial();
+                PlayerPrefs.SetInt("loadInterstitialAD", 5);
+            }
 
             if (FindObjectOfType<TimerScriptAD>())
             {
                 FindObjectOfType<TimerScriptAD>().checkInterstitial();
             }
-
             controller.GetComponentInParent<Rigidbody>().drag = 5f;
             controller.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
             controller.GetComponentInParent<Rigidbody>().angularVelocity = Vector3.zero;
