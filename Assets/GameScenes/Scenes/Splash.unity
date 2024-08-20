@@ -726,6 +726,10 @@ PrefabInstance:
       value: ca-app-pub-6785580110510565/8915620658
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
+      propertyPath: EnableTestModeAds
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.AdmobAPPID
       value: ca-app-pub-6785580110510565~9490335723
       objectReference: {fileID: 0}

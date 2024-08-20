@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     [Header("UI Panels")]
     public GameObject SettingDialogue;
     public GameObject ExitDialogue;
-    public GameObject Shop;
+    //public GameObject Shop;
     public Text totalCoins;
 
 
@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
     {
         SettingDialogue.SetActive(false);
         ExitDialogue.SetActive(false);
-        Shop.SetActive(false);
+        //Shop.SetActive(false);
     }
 
     public void PlayBtn()
