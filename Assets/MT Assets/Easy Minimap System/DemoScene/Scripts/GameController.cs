@@ -21,15 +21,22 @@ namespace MTAssets.EasyMinimapSystem
         public MinimapItem cursor;
         public MinimapItem playerFieldOfView;
 
-        //On update
+        private Handler handler;
+        private TimerScriptAD timerScriptAD;
 
-        void Update()
+        private void Awake()
         {
+            // Cache references to avoid repeated calls to FindObjectOfType
+            handler = FindObjectOfType<Handler>();
+            timerScriptAD = FindObjectOfType<TimerScriptAD>();
         }
 
 
         public void OpenFullscreenMap()
         {
+            handler?.Hide_SmallBanner1Event();
+            handler?.ShowMediumBanner(GoogleMobileAds.Api.AdPosition.BottomRight);
+
             fullScreenMapObj.SetActive(true);
             playerMinimapCamera.gameObject.SetActive(true);
             beforeFullscreenGlobalSizeMultiplier = MinimapDataGlobal.GetMinimapItemsSizeGlobalMultiplier();
@@ -45,6 +52,12 @@ namespace MTAssets.EasyMinimapSystem
 
         public void CloseFullscreenMap()
         {
+            handler?.Show_SmallBanner1();
+            handler?.HideMediumBannerEvent();
+            handler?.showWaitInterstitial();
+            PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+            timerScriptAD?.checkInterstitial();
+
             if (SoundManager.instance != null)
             {
                 SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);

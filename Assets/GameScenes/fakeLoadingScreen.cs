@@ -15,11 +15,16 @@ public class fakeLoadingScreen : MonoBehaviour
     public void Start()
     {
         fillBar.fillAmount = 0;
-       
+
         if (FindObjectOfType<Handler>())
         {
-            FindObjectOfType<Handler>().LoadInterstitialAd();
+            FindObjectOfType<Handler>().Hide_SmallBanner2Event();
+            FindObjectOfType<Handler>().Show_SmallBanner1();
             FindObjectOfType<Handler>().ShowMediumBanner(GoogleMobileAds.Api.AdPosition.BottomRight);
+        }
+
+        if (FindObjectOfType<Handler>())
+        {
         }
 
         if (PlayerPrefs.GetInt("adShowMore") == 5)
@@ -46,10 +51,13 @@ public class fakeLoadingScreen : MonoBehaviour
                     if (FindObjectOfType<Handler>())
                     {
                         FindObjectOfType<Handler>().HideMediumBannerEvent();
+
+                        FindObjectOfType<Handler>().Show_SmallBanner2();
+
                         if (PlayerPrefs.GetInt("adShowMore") == 5)
                         {
                             FindObjectOfType<Handler>().showWaitInterstitial();
-                            PlayerPrefs.SetInt("loadInterstitialAD", 5);
+                            PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
                             PlayerPrefs.SetInt("adShowMore", 1);
                         }
 

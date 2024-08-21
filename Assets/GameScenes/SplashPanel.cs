@@ -13,7 +13,14 @@ public class SplashPanel : MonoBehaviour
 
     bool oneTime;
     bool single;
-
+    private void Awake()
+    {
+#if UNITY_EDITOR
+        Debug.unityLogger.logEnabled = true;
+#else
+        Debug.unityLogger.logEnabled = false;
+#endif
+    }
     void Start()
     {
         fillBar.fillAmount = 0;

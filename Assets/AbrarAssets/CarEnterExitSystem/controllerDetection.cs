@@ -32,7 +32,7 @@ public class controllerDetection : MonoBehaviour
         {
             PlayerPrefs.SetInt("adShowMore", 5);
             FindObjectOfType<Handler>().showWaitInterstitial();
-            PlayerPrefs.SetInt("loadInterstitialAD", 5);
+            PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
         }
         if (SoundManager.instance != null)
         {
@@ -68,7 +68,7 @@ public class controllerDetection : MonoBehaviour
             {
                 PlayerPrefs.SetInt("adShowMore", 5);
                 FindObjectOfType<Handler>().showWaitInterstitial();
-                PlayerPrefs.SetInt("loadInterstitialAD", 5);
+                PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
             }
 
             if (FindObjectOfType<TimerScriptAD>())

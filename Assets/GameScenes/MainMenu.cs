@@ -47,7 +47,6 @@ public class MainMenu : MonoBehaviour
     public void PlayBtn()
     {
         playBtnSound();
-        PlayerPrefs.SetInt("adShowMore", 5);
         PlayerPrefs.SetString("fakeScene", "PlayerSelection");
         SceneManager.LoadScene("FakeLoading");
     }

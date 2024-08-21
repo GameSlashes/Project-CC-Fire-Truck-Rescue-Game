@@ -10,7 +10,7 @@ public class loadInter : MonoBehaviour
 
     public void Update()
     {
-        if (PlayerPrefs.GetInt("loadInterstitialAD") == 5)
+        if (PlayerPrefs.GetInt("InterstitialAdLoadDelay") == 5)
         {
             if (check == false)
             {
@@ -27,7 +27,7 @@ public class loadInter : MonoBehaviour
                     count = 0;
                     check = true;
                     
-                    PlayerPrefs.SetInt("loadInterstitialAD", 0);
+                    PlayerPrefs.SetInt("InterstitialAdLoadDelay", 0);
                 }
             }
         }

@@ -31,7 +31,7 @@ public class OnTrigger : MonoBehaviour
             Debug.LogError("Required components are not assigned.");
             return;
         }
-
+        playerCollider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         Rigidbody playerRigidbody = playerCollider.gameObject.GetComponent<Rigidbody>();
         if (playerRigidbody != null)
         {

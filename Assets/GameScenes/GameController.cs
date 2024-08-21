@@ -255,7 +255,7 @@ public class GameController : MonoBehaviour
     {
         showAd();
         Time.timeScale = 1;
-        PlayerPrefs.SetInt("adShowMore", 5);
+        //PlayerPrefs.SetInt("adShowMore", 5);
         PlayerPrefs.SetString("fakeScene", "MainMenu");
         SceneManager.LoadScene("FakeLoading");
         if (SoundManager.instance != null)
@@ -274,7 +274,7 @@ public class GameController : MonoBehaviour
             SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
         }
 
-        PlayerPrefs.SetInt("adShowMore", 5);
+        //PlayerPrefs.SetInt("adShowMore", 5);
         PlayerPrefs.SetString("fakeScene", "Gameplay");
         SceneManager.LoadScene("FakeLoading");
     }
@@ -316,7 +316,7 @@ public class GameController : MonoBehaviour
     {
         var handler = FindObjectOfType<Handler>();
         handler?.showWaitInterstitial();
-        PlayerPrefs.SetInt("loadInterstitialAD", 5);
+        PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
     }
 }
 

@@ -36,19 +36,29 @@ public class LevelSelection : MonoBehaviour
 
     public void Start()
     {
+        if (FindObjectOfType<Handler>())
+        {
+            FindObjectOfType<Handler>().Hide_SmallBanner1Event();
+            FindObjectOfType<Handler>().Show_SmallBanner2();
+            FindObjectOfType<Handler>().ShowMediumBanner(GoogleMobileAds.Api.AdPosition.BottomRight);
+
+        }
+
         Time.timeScale = 1;
         AudioListener.pause = false;
         CacheButtons();
         LevelsInit();
         checkMode();
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("ENTER_IN_MODE_SELECTION");
+    }
+    public void hidebanner()
+    {
         if (FindObjectOfType<Handler>())
         {
             FindObjectOfType<Handler>().Show_SmallBanner1();
-            FindObjectOfType<Handler>().Show_SmallBanner2();
+            FindObjectOfType<Handler>().HideMediumBannerEvent();
         }
-
     }
-
     void CacheButtons()
     {
         Button[] levelButtons = LevelsPanel.transform.GetComponentsInChildren<Button>();
@@ -117,7 +127,7 @@ public class LevelSelection : MonoBehaviour
     public void BackBtn()
     {
         PlayerPrefs.SetInt("adShowMore", 5);
-        PlayerPrefs.SetString("fakeScene", "PlayerSelection");
+        PlayerPrefs.SetString("fakeScene", "CharacterSelection");
         SceneManager.LoadScene("FakeLoading");
         if (SoundManager.instance != null)
         {

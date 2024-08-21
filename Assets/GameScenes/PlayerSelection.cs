@@ -283,7 +283,7 @@ public class PlayerSelection : MonoBehaviour
     IEnumerator LevelStart()
     {
         PlayerPrefs.SetInt("adShowMore", 5);
-        PlayerPrefs.SetString("fakeScene", "LevelSelection");
+        PlayerPrefs.SetString("fakeScene", "CharacterSelection");
         SceneManager.LoadScene("FakeLoading");
         yield return async;
     }
@@ -311,5 +311,19 @@ public class PlayerSelection : MonoBehaviour
     {
         playBtnSound();
         onCustomization.Invoke();
+    }
+    public void Nextcen()
+    {
+        playBtnSound();
+        PlayerPrefs.SetInt("adShowMore", 5);
+        PlayerPrefs.SetString("fakeScene", "CharacterSelection");
+        SceneManager.LoadScene("FakeLoading");
+    }
+    public void back()
+    {
+        playBtnSound();
+        PlayerPrefs.SetInt("adShowMore", 5);
+        PlayerPrefs.SetString("fakeScene", "MainMenu");
+        SceneManager.LoadScene("FakeLoading");
     }
 }
