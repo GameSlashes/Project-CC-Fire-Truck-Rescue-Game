@@ -287,9 +287,9 @@ public class GameController : MonoBehaviour
 
     public void resume()
     {
-        showAd();
         Time.timeScale = 1;
         Game_Elements.PauseMenu.SetActive(false);
+        showAd();
     }
 
     public void doubleRewardBtn()

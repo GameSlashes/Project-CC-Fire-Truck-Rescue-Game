@@ -43,8 +43,8 @@ public class ReviewHandling : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         ReviewPannel.SetActive(false);
 
-        if (FindObjectOfType<TimerScriptAD>())
-            FindObjectOfType<TimerScriptAD>().afterRateUs();
+        //if (FindObjectOfType<TimerScriptAD>())
+        //    FindObjectOfType<TimerScriptAD>().afterRateUs();
 
     }
    

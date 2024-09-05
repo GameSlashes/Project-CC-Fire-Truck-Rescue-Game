@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AD Break
+  m_Text: AD Brake
 --- !u!1 &1403626423
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +382,6 @@ GameObject:
   - component: {fileID: 2214116484807183005}
   - component: {fileID: 2214116484807182946}
   - component: {fileID: 1484853048}
-  - component: {fileID: 1484853050}
   m_Layer: 0
   m_Name: AdsManager
   m_TagString: Untagged
@@ -495,17 +494,3 @@ MonoBehaviour:
   _adUnitId: ca-app-pub-3940256099942544/9257395921
   handler: {fileID: 2214116484807182946}
   AdShowing: 0
---- !u!114 &1484853050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2214116484807182947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea6287969fc57a4cb87cc0280aaaf67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 0
-  intLoaded: 0
