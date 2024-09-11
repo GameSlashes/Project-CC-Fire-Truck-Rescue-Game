@@ -81,7 +81,7 @@ public class ParticlesEmissionReduction : MonoBehaviour
         }
     }
 
-    private void CheckMissionFireAmount()
+    public void CheckMissionFireAmount()
     {
         var missionManager = MissionManager.Instance;
         if (missionManager == null)
@@ -114,6 +114,7 @@ public class ParticlesEmissionReduction : MonoBehaviour
 
             firefighterManager.SetWaterActive(false);
             firefighterManager.waterButton.SetActive(false);
+            firefighterManager.offwaterButton.SetActive(false);
             firefighterManager.SetPipeActive(false);
 
             if (firefighterManager.isFirePipeActive)

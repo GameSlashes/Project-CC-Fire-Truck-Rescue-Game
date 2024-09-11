@@ -14,11 +14,13 @@ public class coroutineManager : MonoBehaviour
     public void getIn(string controllerName)
     {
         StartCoroutine(getInControllerDelay(controllerName));
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("EnterCar");
     }
 
     public void getOut(string controllerName)
     {
         StartCoroutine(getOutControllerDelay(controllerName));
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("ExitCar");
     }
 
     IEnumerator getInControllerDelay(string controllerName)

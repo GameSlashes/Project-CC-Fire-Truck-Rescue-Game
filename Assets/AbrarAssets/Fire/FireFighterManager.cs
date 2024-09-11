@@ -17,6 +17,7 @@ public class FireFighterManager : MonoBehaviour
     [Header("UI Elements")]
     public GameObject fireExtinguisherButton; // Button for equipping the fire extinguisher
     public GameObject waterButton; // Button for activating/deactivating water
+    public GameObject offwaterButton; // Button for activating/deactivating water
     public Slider waterCapacitySlider; // Slider for water capacity
     public GameObject refillPanel; // Panel for refilling water
     public Button refillButton; // Button for refilling water
@@ -76,6 +77,10 @@ public class FireFighterManager : MonoBehaviour
         if (waterButton != null)
         {
             waterButton.GetComponent<Button>().onClick.AddListener(() => SetWaterActive(!IsWaterActive()));
+        }   
+        if (offwaterButton != null)
+        {
+            offwaterButton.GetComponent<Button>().onClick.AddListener(() => SetWaterActive(!IsWaterActive()));
         }
         else
         {
@@ -234,6 +239,7 @@ public class FireFighterManager : MonoBehaviour
             {
                 SetWaterActive(false);
                 waterButton.SetActive(false);
+                offwaterButton.SetActive(false);
                 if (debugMode) Debug.Log("Water capacity reached zero. Deactivating water.");
                 break;
             }
@@ -290,8 +296,9 @@ public class FireFighterManager : MonoBehaviour
     {
         if (fireExtinguisherButton != null && waterButton != null)
         {
+            //offwaterButton.SetActive(firePipe.activeSelf);
             waterButton.SetActive(firePipe.activeSelf);
-            waterCapacitySlider.gameObject.SetActive(firePipe.activeSelf);
+            waterCapacitySlider.transform.parent.gameObject.SetActive(firePipe.activeSelf);
         }
     }
 

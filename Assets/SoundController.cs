@@ -64,10 +64,22 @@ public class SoundController : MonoBehaviour
 
     void ApplyMusicVolume()
     {
-        // Apply the music volume in your game
-        // For now, assuming it affects AudioListener volume
-        AudioListener.volume = musicSlider.value;
+        // Adjusting the volume for all sound components in a single loop
+        AudioSource[] audioSources = {
+        SoundManager.instance.mainMenuSound.GetComponent<AudioSource>(),
+        SoundManager.instance.gamePlaySound.GetComponent<AudioSource>(),
+        SoundManager.instance.siren.GetComponent<AudioSource>(),
+        SoundManager.instance.missionComplete.GetComponent<AudioSource>(),
+        SoundManager.instance.missionFail.GetComponent<AudioSource>(),
+        SoundManager.instance.panelSlider.GetComponent<AudioSource>()
+    };
+
+        foreach (AudioSource source in audioSources)
+        {
+            source.volume = musicSlider.value;
+        }
     }
+
 
     void ApplySoundVolume()
     {

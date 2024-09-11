@@ -92,7 +92,7 @@ public class PlayerSelection : MonoBehaviour
             FindObjectOfType<Handler>().Show_SmallBanner1();
             FindObjectOfType<Handler>().Show_SmallBanner2();
         }
-
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("CarSelection_Open");
     }
 
     public void Update()
@@ -278,7 +278,15 @@ public class PlayerSelection : MonoBehaviour
         playBtnSound();
         SaveData.instance.finalPlayer = current;
         StartCoroutine(LevelStart());
+
+        // Log the selected car's ID
+        Firebase.Analytics.FirebaseAnalytics.LogEvent(
+            "SelectCar_Number",
+            new Firebase.Analytics.Parameter("selected_car", Players[current].playerID.ToString()) // Assuming playerID is the car's ID
+        );
     }
+
+
 
     IEnumerator LevelStart()
     {
@@ -295,6 +303,8 @@ public class PlayerSelection : MonoBehaviour
         Players[current].Locked = false;
         GetPlayerInfo();
         playBtnSound();
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("Purchased_Car", new Firebase.Analytics.Parameter("Car_index", current));
+
     }
 
     public void unlockAllPlayers()

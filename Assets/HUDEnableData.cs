@@ -10,11 +10,16 @@ public class HUDEnableData : MonoBehaviour
 
     public MinimapCamera minimapCamera;
     public MinimapRenderer minimapRenderer;
+    public RTC_TrafficSpawner cam;
 
     private void OnEnable()
     {
         navigationSystem.PlayerCamera = playerCameraComponent.GetComponent<Camera>();
         navigationSystem.PlayerController = playerControllerComponent.transform;
         minimapRenderer.minimapCameraToShow = minimapCamera;
+
+        cam.transform.SetParent(gameObject.transform);
+        cam.transform.localPosition = Vector3.zero;
+        cam.transform.localRotation = Quaternion.identity;
     }
 }

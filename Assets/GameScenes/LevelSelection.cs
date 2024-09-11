@@ -49,7 +49,7 @@ public class LevelSelection : MonoBehaviour
         CacheButtons();
         LevelsInit();
         checkMode();
-        Firebase.Analytics.FirebaseAnalytics.LogEvent("ENTER_IN_MODE_SELECTION");
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("ModeSelection_Open");
     }
     public void hidebanner()
     {

@@ -24,6 +24,7 @@ public class SplashPanel : MonoBehaviour
     void Start()
     {
         fillBar.fillAmount = 0;
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("SplashScreen_Open");
     }
 
     public void Update()

@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FireTruck_Body
-  m_Shader: {fileID: 23, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
+  m_Shader: {fileID: 4800000, guid: 0ff2755ef0984d5429a3938b5ac93c08, type: 3}
+  m_ValidKeywords:
   - _EMISSION
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -26,7 +26,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
-        m_Texture: {fileID: 8900000, guid: aa2aae5c9fc5f1b4c926325fa259963c, type: 3}
+        m_Texture: {fileID: 8900000, guid: 48c1f7b0c095fcb47bd8516ec1c71ce3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -70,7 +70,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -82,7 +82,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
-    - _ReflectColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.5}
-    - _SpecColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ReflectColor: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 0.5}
+    - _SpecColor: {r: 0.25471696, g: 0.25471696, b: 0.25471696, a: 0.5019608}
   m_BuildTextureStacks: []

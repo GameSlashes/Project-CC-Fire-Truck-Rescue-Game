@@ -58,7 +58,7 @@ public class CharacterSelection : MonoBehaviour
         Time.timeScale = 1;
         AudioListener.pause = false;
         GetPlayerInfo();
-        
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("CharacterSelection_Open");
     }
 
 
@@ -180,7 +180,15 @@ public class CharacterSelection : MonoBehaviour
         Players[current].Locked = false;
         GetPlayerInfo();
         playBtnSound();
+
+        // Log the purchased character's index
+        Firebase.Analytics.FirebaseAnalytics.LogEvent(
+            "Purchased_Character",
+            new Firebase.Analytics.Parameter("character_index", current)
+        );
     }
+
+
 
     public void NextScen()
     {
@@ -188,7 +196,14 @@ public class CharacterSelection : MonoBehaviour
         SavepPlayerData.instance.finalPlayer = current;
         PlayerPrefs.SetString("fakeScene", "LevelSelection");
         SceneManager.LoadScene("FakeLoading");
+
+        // Log the character selection with the character index
+        Firebase.Analytics.FirebaseAnalytics.LogEvent(
+            "SelectCharacter_Number",
+            new Firebase.Analytics.Parameter("character_index", current) // Provide a name for the parameter and the value
+        );
     }
+
     public void back()
     {
         playBtnSound();

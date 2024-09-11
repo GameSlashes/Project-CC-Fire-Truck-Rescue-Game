@@ -7,10 +7,13 @@ public class controllerDetection : MonoBehaviour
     {
         if (other.gameObject.tag == "Collectable")
         {
-            controllerName = "Collectable";
-            controller = other.gameObject;
-            other.gameObject.GetComponent<controllerCollision>().carEngineEnabled.SetActive(true);
-            GameManager.instance.uiElements.carEnterBtn.SetActive(true);
+            if (!FindObjectOfType<TimerScriptAD>().isMission)
+            {
+                controllerName = "Collectable";
+                controller = other.gameObject;
+                other.gameObject.GetComponent<controllerCollision>().carEngineEnabled.SetActive(true);
+                GameManager.instance.uiElements.carEnterBtn.SetActive(true);
+            }
         }
 
     }
@@ -41,7 +44,7 @@ public class controllerDetection : MonoBehaviour
         if (FindObjectOfType<TimerScriptAD>())
         {
             FindObjectOfType<TimerScriptAD>().checkInterstitial();
-        }
+        }     
         if (controllerName == "Collectable")
         {
             GameManager.instance.uiElements.fadeManager.SetActive(true);

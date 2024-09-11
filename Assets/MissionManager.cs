@@ -220,6 +220,7 @@ public class MissionManager : MonoBehaviour
 
             firefighterManager.SetWaterActive(false);
             firefighterManager.waterButton.SetActive(false);
+            firefighterManager.offwaterButton.SetActive(false);
             firefighterManager.SetPipeActive(false);
 
             if (firefighterManager.isFirePipeActive)
@@ -257,7 +258,6 @@ public class MissionManager : MonoBehaviour
         GameElements.fireAmountToDone.text = "0";
         GameElements.rescueManToDone.text = "0";
         GameElements.rescueMan.text = "0";
-
     }
 
     private IEnumerator ShowDialogue(GameObject initialText, GameObject finalText)
@@ -321,6 +321,9 @@ public class MissionManager : MonoBehaviour
         ActivateMission(currentMissionIndex);
         AudioListener.pause = false;
         trafficCars.SetActive(false);
+        // Log the purchased character's index
+
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("MissionNumber_____Accepted",new Firebase.Analytics.Parameter("Mission_index", currentMissionIndex));
     }
     public void ActivateMyCameras()
     {
@@ -341,6 +344,8 @@ public class MissionManager : MonoBehaviour
         stopTimer.isMission = false;
         GameElements.MissionInitialization.SetActive(false);
         flag = false;
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("MissionNumber_____Reject", new Firebase.Analytics.Parameter("RejectMission_index", currentMissionIndex));
+
     }
 
     private void OnNextMission()
@@ -362,6 +367,8 @@ public class MissionManager : MonoBehaviour
         {
             currentMissionIndex = 0;
         }
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("MissionNumber_____Complete", new Firebase.Analytics.Parameter("Mission_index____Complete", currentMissionIndex));
+
     }
 
     private void InitializePlayer(int missionIndex)

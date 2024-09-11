@@ -44,7 +44,7 @@ public class AmbulanceController : MonoBehaviour
             gameObject.SetActive(false);
             callitOnce = false;
         }
-
+        ParticlesEmissionReduction.Instance.CheckMissionFireAmount();
     }
 
     /// <summary>

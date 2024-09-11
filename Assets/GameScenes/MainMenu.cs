@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
             FindObjectOfType<Handler>().Show_SmallBanner1();
             FindObjectOfType<Handler>().Show_SmallBanner2();
         }
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("MainMenu_Open");
     }
     void Update()
     {
@@ -67,6 +68,7 @@ public class MainMenu : MonoBehaviour
     {
         playBtnSound();
         dialogue.SetActive(true);
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("SettingsPanel_Open");
     }
 
     public void Exit()

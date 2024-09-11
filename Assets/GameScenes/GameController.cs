@@ -57,6 +57,7 @@ public class GameController : MonoBehaviour
         }
         if (SoundManager.instance)
         SoundManager.instance.PlayGamePlaySound();
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("GamePlay_Open");
     }
 
     public void checkModeStats()
