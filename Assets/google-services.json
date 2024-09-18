@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "896952655200",
-    "project_id": "fire-truck-simualtor",
-    "storage_bucket": "fire-truck-simualtor.appspot.com"
+    "project_number": "903774713897",
+    "project_id": "fire-truck-driving-sim-games",
+    "storage_bucket": "fire-truck-driving-sim-games.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:896952655200:android:ae0aa6e145bd52f03fd205",
+        "mobilesdk_app_id": "1:903774713897:android:3442c83287036f121e8438",
         "android_client_info": {
           "package_name": "com.cc.firefigther.truck.rescue.simulator.games"
         }
@@ -15,15 +15,14 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCXujZnldNAC6l-9Mhd4Mb9G3pSIRJsg8w"
+          "current_key": "AIzaSyC0zrIp-ITIN61WKq523iFmf1L4u2TBDSw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": []
         }
-      },
-      "admob_app_id": "ca-app-pub-6785580110510565~9490335723"
+      }
     }
   ],
   "configuration_version": "1"
