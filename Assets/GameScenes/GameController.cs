@@ -164,6 +164,7 @@ public class GameController : MonoBehaviour
                 players[i].SetActive(true);
                 myPlayers= players[i];
                 MissionManager.Instance.myCar = myPlayers;
+                myPlayers.GetComponent<RCCP_CarController>().KillEngine();
                 //SetPlayerPosition(players[i], levels[SaveData.instance.CurrentLevel].SpawnPoint);
             }
             else

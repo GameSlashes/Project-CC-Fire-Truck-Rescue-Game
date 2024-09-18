@@ -38,7 +38,19 @@ namespace UnityStandardAssets.CrossPlatformInput
             Sensitivity_X = 1;
             Sensitivity_Y = 1;
         }
+        private void OnEnable()
+        {
+            touchPointer.position = previoustouchPosition;
+        }
 
+        private void OnDisable()
+        {
+            if (touchPointer)
+            {
+                touchPointer.anchoredPosition = Vector2.zero; // Reset position to zero
+                touchPointer.gameObject.SetActive(false); // Deactivate the touch pointer
+            }
+        }
         void CreateVirtualAxes()
         {
             // create new axes based on axes to use

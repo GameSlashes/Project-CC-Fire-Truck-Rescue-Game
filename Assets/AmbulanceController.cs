@@ -11,6 +11,8 @@ public class AmbulanceController : MonoBehaviour
     [SerializeField] private GameObject patientActive;
     [SerializeField] private GameObject patientInactive;
     [SerializeField] private bool callitOnce = true;
+    [SerializeField] private MapLine endPoint;
+    [SerializeField] private GameObject assignEndPoint;
 
     /// <summary>
     /// Enables all animators and activates the active patient GameObject while deactivating the inactive patient GameObject.
@@ -85,5 +87,9 @@ public class AmbulanceController : MonoBehaviour
         {
             Debug.LogWarning("Inactive patient GameObject reference is missing.");
         }
+    }
+    private void OnDisable()
+    {
+        endPoint.endPoint = assignEndPoint;
     }
 }

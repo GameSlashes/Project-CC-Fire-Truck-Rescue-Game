@@ -143,7 +143,6 @@ namespace UnityStandardAssets.CrossPlatformInput
 			m_Id = -1;
 			UpdateVirtualAxes(Vector3.zero);
 		}
-
 		void OnDisable()
 		{
 			//if (CrossPlatformInputManager.AxisExists(horizontalAxisName))

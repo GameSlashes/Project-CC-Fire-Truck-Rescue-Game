@@ -52,6 +52,7 @@ public class controllerDetection : MonoBehaviour
             {
                 controller.GetComponentInParent<Rigidbody>().drag = 0.01f;
                 controller.GetComponentInParent<Rigidbody>().isKinematic = false;
+                controller.GetComponentInParent<RCCP_CarController>().StartEngine();
                 GameManager.instance.setController(GameManager.instance.allControllers[1]);
                 GameManager.instance.rccCamera.GetComponent<RCCP_Camera>().cameraTarget.playerVehicle = controller.GetComponentInParent<RCCP_CarController>();
                 RCCP_SceneManager.Instance.activePlayerVehicle = controller.GetComponentInParent<RCCP_CarController>();
@@ -79,6 +80,7 @@ public class controllerDetection : MonoBehaviour
                 FindObjectOfType<TimerScriptAD>().checkInterstitial();
             }
             controller.GetComponentInParent<Rigidbody>().drag = 5f;
+            controller.GetComponentInParent<RCCP_CarController>().KillEngine();
             controller.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
             controller.GetComponentInParent<Rigidbody>().angularVelocity = Vector3.zero;
 

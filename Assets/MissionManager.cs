@@ -3,6 +3,7 @@ using System.Collections;
 using System.Drawing;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour
@@ -366,11 +367,26 @@ public class MissionManager : MonoBehaviour
         else
         {
             currentMissionIndex = 0;
+
+            showAd();
+            Time.timeScale = 1;
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlayButtonClickSound(SoundManager.instance.buttonClickSound);
+            }
+
+            PlayerPrefs.SetString("fakeScene", "Gameplay");
+            SceneManager.LoadScene("FakeLoading");
         }
         Firebase.Analytics.FirebaseAnalytics.LogEvent("MissionNumber_____Complete", new Firebase.Analytics.Parameter("Mission_index____Complete", currentMissionIndex));
 
     }
-
+    public void showAd()
+    {
+        var handler = FindObjectOfType<Handler>();
+        handler?.showWaitInterstitial();
+        PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+    }
     private void InitializePlayer(int missionIndex)
     {
         var controllerCollision = players.GetComponentInChildren<controllerCollision>();

@@ -397,7 +397,14 @@ public class RCCP_UIManager : RCCP_UIComponent {
         }
 
     }
-
+    public void ResetCarPos()
+    {
+        if (carController != null)
+        {
+            carController.transform.position = new Vector3(carController.transform.position.x, carController.transform.position.y + 3f, carController.transform.position.z);
+            carController.transform.rotation = Quaternion.Euler(0f, carController.transform.eulerAngles.y, 0f);
+        }
+    }
     private void OnDisable() {
 
         RCCP_Events.Event_OnRCCPUIDestroyed(this);
