@@ -29,7 +29,14 @@ public class coroutineManager : MonoBehaviour
         if(controllerName == "Collectable")
         {
             GameManager.instance.uiElements.carEnterBtn.SetActive(false);
-            GameManager.instance.uiElements.carExitBtn.SetActive(true);
+            if (!TimerScriptAD.instance.isMission)
+            {
+                GameManager.instance.uiElements.carExitBtn.SetActive(true);
+            }
+            else
+            {
+                GameManager.instance.uiElements.carExitBtn.SetActive(false);
+            }
         }
     }
 

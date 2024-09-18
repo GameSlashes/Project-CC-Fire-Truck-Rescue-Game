@@ -2747,7 +2747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -277.50616, y: 342.07047}
+  m_AnchoredPosition: {x: -265, y: 330}
   m_SizeDelta: {x: 555.0123, y: 684.1409}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759356908
@@ -2875,7 +2875,7 @@ MonoBehaviour:
   forcedTargetType: 0
   autoPlay: 1
   useTargetAsV3: 0
-  endValueFloat: 1
+  endValueFloat: 0.9476633
   endValueV3: {x: 0, y: 0, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TimerScriptAD : MonoBehaviour
 {
+    public static TimerScriptAD instance;
     public GameObject adObject;
     public float myFloat = 45f;
     //public Text timer;
@@ -10,7 +11,10 @@ public class TimerScriptAD : MonoBehaviour
     public bool showAD_1;
     public bool rateUs;
     public bool isMission;
-
+    public void Awake()
+    {
+        instance = this;
+    }
     void Update()
     {
 
