@@ -727,7 +727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: EnableTestModeAds
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.UnityId

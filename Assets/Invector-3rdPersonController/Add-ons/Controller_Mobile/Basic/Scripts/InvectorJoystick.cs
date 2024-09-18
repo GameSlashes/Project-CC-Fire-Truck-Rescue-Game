@@ -116,7 +116,11 @@ public class InvectorJoystick : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         //    CrossPlatformInputManager.SetButtonUp(pressButtonName);
         //}
     }
-
+    private void OnDisable()
+    {
+        transform.localPosition = m_StartPos;
+        UpdateVirtualAxes(m_StartPos);
+    }
     public void OnPointerDown(PointerEventData data)
     {
         //if (!string.IsNullOrEmpty(pressButtonName))

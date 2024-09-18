@@ -31,41 +31,12 @@ public class OnTrigger : MonoBehaviour
             Debug.LogError("Required components are not assigned.");
             return;
         }
-        playerCollider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        Rigidbody playerRigidbody = playerCollider.gameObject.GetComponent<Rigidbody>();
-        if (playerRigidbody != null)
-        {
-            // Gradually reduce the velocity
-            StartCoroutine(GraduallyStopRigidbody(playerRigidbody));
-        }
+        playerCollider.GetComponent<RCCP_CarController>().handbrakeInput_P = 0;
+        playerCollider.GetComponent<RCCP_CarController>().throttleInput_P = 0;
 
         exitMyPlayer.getOut();
         UpdateMapLine();
         gameObject.SetActive(false);
-    }
-
-    private IEnumerator GraduallyStopRigidbody(Rigidbody rb)
-    {
-        float duration = 0.5f; // Time to gradually stop the movement
-        float elapsed = 0f;
-
-        Vector3 initialVelocity = rb.velocity;
-        Vector3 initialAngularVelocity = rb.angularVelocity;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / duration;
-
-            rb.velocity = Vector3.Lerp(initialVelocity, Vector3.zero, t);
-            rb.angularVelocity = Vector3.Lerp(initialAngularVelocity, Vector3.zero, t);
-
-            yield return null;
-        }
-
-        // Ensure final velocity is exactly zero
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
     }
 
     public void UpdateMapLine()

@@ -81,7 +81,8 @@ namespace Invector
 
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if (this.enabled && this.other == null && CanTrigger(other) && IsInTagMask(other.gameObject.tag) && IsInLayerMask(other.gameObject.layer))
+            if (IsInTagMask(other.gameObject.tag))
+            //if (this.enabled && this.other == null && CanTrigger(other) && IsInTagMask(other.gameObject.tag) && IsInLayerMask(other.gameObject.layer))
             {
                 inCollision = true;
                 this.other = other;

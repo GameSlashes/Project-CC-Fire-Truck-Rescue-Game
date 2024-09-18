@@ -55,7 +55,7 @@ namespace MTAssets.EasyMinimapSystem
             handler?.Show_SmallBanner1();
             handler?.HideMediumBannerEvent();
             handler?.showWaitInterstitial();
-            PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+            PlayerPrefs.SetInt("loadInterstitialAD", 5);
             timerScriptAD?.checkInterstitial();
 
             if (SoundManager.instance != null)

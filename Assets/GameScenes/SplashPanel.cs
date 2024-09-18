@@ -42,6 +42,7 @@ public class SplashPanel : MonoBehaviour
                     {
                         FindObjectOfType<Handler>().Show_SmallBanner1();
                         FindObjectOfType<Handler>().Show_SmallBanner2();
+                        PlayerPrefs.SetInt("loadInterstitialAD", 5);
                     }
                     if (AppOpenAdController.Instance)
                     {

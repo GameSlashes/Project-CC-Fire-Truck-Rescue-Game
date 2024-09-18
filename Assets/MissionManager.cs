@@ -385,7 +385,7 @@ public class MissionManager : MonoBehaviour
     {
         var handler = FindObjectOfType<Handler>();
         handler?.showWaitInterstitial();
-        PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+        PlayerPrefs.SetInt("loadInterstitialAD", 5);
     }
     private void InitializePlayer(int missionIndex)
     {
@@ -418,7 +418,7 @@ public class MissionManager : MonoBehaviour
     {
         var handler = FindObjectOfType<Handler>();
         handler?.showWaitInterstitial();
-        PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+        PlayerPrefs.SetInt("loadInterstitialAD", 5);
     }
     public void playBtnSound()
     {

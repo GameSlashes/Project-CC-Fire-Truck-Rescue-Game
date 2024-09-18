@@ -171,7 +171,9 @@ public class RCCP_UIManager : RCCP_UIComponent {
     [Tooltip("Target image of the following system")] public GameObject replaying;
 
     [Header("Buttons")]
-    [Tooltip("Button of rebinding inputs")] public Button rebindInputsButton;
+    [Tooltip("Button of rebinding inputs")] public Button rebindInputsButton;  
+    [Header("Buttons")]
+    [Tooltip("Button of rebinding inputs")] public Button reSetCarosition;
 
     private void Awake() {
 
@@ -205,7 +207,6 @@ public class RCCP_UIManager : RCCP_UIComponent {
         }
 
     }
-
     private void OnEnable() {
 
         //  Firing an event when RCCP Canvas spawns.
@@ -401,9 +402,18 @@ public class RCCP_UIManager : RCCP_UIComponent {
     {
         if (carController != null)
         {
-            carController.transform.position = new Vector3(carController.transform.position.x, carController.transform.position.y + 3f, carController.transform.position.z);
-            carController.transform.rotation = Quaternion.Euler(0f, carController.transform.eulerAngles.y, 0f);
+            if (!carController.GetComponent<Rigidbody>().isKinematic)
+            {
+                reSetCarosition.interactable = false;
+                carController.transform.position = new Vector3(carController.transform.position.x, carController.transform.position.y + 3f, carController.transform.position.z);
+                carController.transform.rotation = Quaternion.Euler(0f, carController.transform.eulerAngles.y, 0f);
+                Invoke("ResetInterActable", 1.5f);
+            }
         }
+    }
+    public void ResetInterActable()
+    {
+        reSetCarosition.interactable = true;
     }
     private void OnDisable() {
 

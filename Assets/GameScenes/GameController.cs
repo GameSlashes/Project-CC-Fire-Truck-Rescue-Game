@@ -318,7 +318,7 @@ public class GameController : MonoBehaviour
     {
         var handler = FindObjectOfType<Handler>();
         handler?.showWaitInterstitial();
-        PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+        PlayerPrefs.SetInt("loadInterstitialAD", 5);
     }
 }
 

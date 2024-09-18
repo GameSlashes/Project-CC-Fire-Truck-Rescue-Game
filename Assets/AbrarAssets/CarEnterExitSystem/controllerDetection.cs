@@ -35,6 +35,7 @@ public class controllerDetection : MonoBehaviour
         {
             PlayerPrefs.SetInt("adShowMore", 5);
             FindObjectOfType<Handler>().showWaitInterstitial();
+            PlayerPrefs.SetInt("loadInterstitialAD", 5);
             PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
         }
         if (SoundManager.instance != null)
@@ -72,7 +73,7 @@ public class controllerDetection : MonoBehaviour
             {
                 PlayerPrefs.SetInt("adShowMore", 5);
                 FindObjectOfType<Handler>().showWaitInterstitial();
-                PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+                PlayerPrefs.SetInt("loadInterstitialAD", 5);
             }
 
             if (FindObjectOfType<TimerScriptAD>())
@@ -93,6 +94,9 @@ public class controllerDetection : MonoBehaviour
         {
             MissionManager.Instance.TurnSirenOff();
 
+            controller.GetComponentInParent<RCCP_CarController>().KillEngine();
+            controller.GetComponentInParent<RCCP_CarController>().handbrakeInput_P = 0;
+            controller.GetComponentInParent<RCCP_CarController>().throttleInput_P = 0;
             controller.GetComponentInParent<Rigidbody>().drag = 5f;
             controller.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
             controller.GetComponentInParent<Rigidbody>().angularVelocity = Vector3.zero;

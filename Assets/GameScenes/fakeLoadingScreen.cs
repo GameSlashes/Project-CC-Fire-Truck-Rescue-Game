@@ -57,7 +57,7 @@ public class fakeLoadingScreen : MonoBehaviour
                         if (PlayerPrefs.GetInt("adShowMore") == 5)
                         {
                             FindObjectOfType<Handler>().showWaitInterstitial();
-                            PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+                            PlayerPrefs.SetInt("loadInterstitialAD", 5);
                             PlayerPrefs.SetInt("adShowMore", 1);
                         }
 

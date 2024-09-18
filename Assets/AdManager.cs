@@ -36,7 +36,7 @@ public class AdManager : MonoBehaviour
     public void ShowInterstitialAd()
     {
         handler?.showWaitInterstitial();
-        PlayerPrefs.SetInt("InterstitialAdLoadDelay", 5);
+        PlayerPrefs.SetInt("loadInterstitialAD", 5);
 
         timerScriptAD?.checkInterstitial();
     }
