@@ -66,7 +66,6 @@ public class controllerDetection : MonoBehaviour
 
     public void getOutBtn()
     {
-        PlayerPrefs.SetInt("adShowMore", 5);
         if (controllerName == "Collectable")
         {
             if (FindObjectOfType<Handler>())
@@ -80,12 +79,11 @@ public class controllerDetection : MonoBehaviour
             {
                 FindObjectOfType<TimerScriptAD>().checkInterstitial();
             }
-            controller.GetComponentInParent<Rigidbody>().drag = 5f;
+            controller.GetComponentInParent<Rigidbody>().drag = 1f;
+            controller.GetComponentInParent<RCCP_CarController>().handbrakeInput_P = 0;
             controller.GetComponentInParent<RCCP_CarController>().KillEngine();
-            controller.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
-            controller.GetComponentInParent<Rigidbody>().angularVelocity = Vector3.zero;
 
-            Invoke("getOut", 1f);
+            Invoke("getOut", 1.5f);
         }
     }
     public void getOut()

@@ -8,6 +8,7 @@ public class ParticlesEmissionReduction : MonoBehaviour
     [Header("Particle Systems")]
     [SerializeField] private ParticleSystem[] particleSystems;
     [SerializeField] private float fireReductionRate = 1f;
+    [SerializeField] public GameObject particle;
 
     private bool isFireExtinguished;
     private bool callItOnce = true;
@@ -77,6 +78,18 @@ public class ParticlesEmissionReduction : MonoBehaviour
             currentMission.fireAmount++;
             missionManager.GameElements.fireAmount.text = currentMission.fireAmount.ToString();
             GetComponent<AudioSource>().enabled = false;
+
+            GameObject instantiatedObject = Instantiate(particle, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            instantiatedObject.transform.SetParent(GameManager.instance.uiElements._DialoguePopup.transform);
+            instantiatedObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            instantiatedObject.GetComponent<RectTransform>().sizeDelta = Vector2.zero;
+            instantiatedObject.GetComponent<RectTransform>().anchorMin = Vector2.zero;
+            instantiatedObject.GetComponent<RectTransform>().anchorMax = Vector2.one;
+            instantiatedObject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.5f);
+            instantiatedObject.GetComponent<RectTransform>().localPosition = Vector3.zero;
+            instantiatedObject.GetComponent<RectTransform>().localScale = Vector3.one;
+            instantiatedObject.GetComponent<RectTransform>().rotation = Quaternion.identity;
+
             callItOnce = false;
         }
     }
@@ -96,6 +109,8 @@ public class ParticlesEmissionReduction : MonoBehaviour
         if (currentMission.fireAmount >= currentMission.fireAmountToDone &&
             currentMission.rescueManCounter >= currentMission.rescueManCounterToDone)
         {
+            MissionManager.Instance.GameElements.RescueManCompleteTick.SetActive(true);
+            MissionManager.Instance.GameElements.fireCompleteTick.SetActive(true);
             isFireExtinguished = true;
             Invoke(nameof(CompleteMissionActions), 3f);
         }
@@ -109,8 +124,6 @@ public class ParticlesEmissionReduction : MonoBehaviour
             if (firefighterManager.debugMode) Debug.Log("Completing mission actions...");
 
             firefighterManager.itemManager.UnequipCurrentEquipedItem(0);
-            //firefighterManager.itemManager.EquipItemToEquipSlot(1, 1, firefighterManager.Melee);
-            //firefighterManager.itemManager.EquipItemToCurrentEquipSlot(firefighterManager.Melee, 1);
 
             firefighterManager.SetWaterActive(false);
             firefighterManager.waterButton.SetActive(false);

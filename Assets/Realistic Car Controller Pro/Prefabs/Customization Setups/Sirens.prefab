@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce3052d5ad962c41913d88e781fedde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completeSetup: 0
+  checkedSetup: 0
 --- !u!1 &1295306245404701848
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +77,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236207230236757770}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1254008541008875871
 Light:
@@ -169,7 +171,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236207230236757770}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &8736749851440395729
 Light:
@@ -233,6 +235,71 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1460092121089070512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2236207230236757770}
+  - component: {fileID: 57391135401074315}
+  m_Layer: 0
+  m_Name: 'Model_Police_Siren (Missing Prefab with guid: cee13abb697226941b05accd72d72f09)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2236207230236757770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460092121089070512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6234199237377817968}
+  - {fileID: 3235424014567512445}
+  - {fileID: 4203008882481791347}
+  - {fileID: 1349241693195221627}
+  - {fileID: 7005337632469089214}
+  - {fileID: 3598675045515898007}
+  - {fileID: 638951047847382496}
+  - {fileID: 1566245979611931140}
+  m_Father: {fileID: 952179539788876079}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57391135401074315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460092121089070512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce053d1d3a1b04438fa0a4b54c89634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completeSetup: 0
+  checkedSetup: 0
+  sirenMode: 1
+  redLights:
+  - {fileID: 6144085226270285966}
+  - {fileID: 1254008541008875871}
+  - {fileID: 7815972532996919471}
+  - {fileID: 7807415736277121213}
+  blueLights:
+  - {fileID: 3648959415181859472}
+  - {fileID: 8736749851440395729}
+  - {fileID: 970979727323916167}
+  - {fileID: 9117400136372155811}
 --- !u!1 &1781995447527090801
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +330,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236207230236757770}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &6144085226270285966
 Light:
@@ -357,7 +424,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236207230236757770}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &9117400136372155811
 Light:
@@ -466,8 +533,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f930d05fc2ed9434bb9d1eb8e604fae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completeSetup: 0
+  checkedSetup: 0
   sirens:
   - {fileID: 3015934080698046231}
+  sirenIndex: -1
 --- !u!1 &4143677664660646587
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +568,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236207230236757770}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &7807415736277121213
 Light:
@@ -592,7 +662,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236207230236757770}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &7815972532996919471
 Light:
@@ -686,7 +756,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236207230236757770}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &970979727323916167
 Light:
@@ -780,7 +850,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236207230236757770}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &3648959415181859472
 Light:
@@ -844,93 +914,3 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &1766013439145240801
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 952179539788876079}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: cee13abb697226941b05accd72d72f09, type: 3}
-      propertyPath: m_Name
-      value: Model_Police_Siren
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cee13abb697226941b05accd72d72f09, type: 3}
---- !u!1 &1460092121089070512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cee13abb697226941b05accd72d72f09, type: 3}
-  m_PrefabInstance: {fileID: 1766013439145240801}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &57391135401074315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460092121089070512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce053d1d3a1b04438fa0a4b54c89634, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sirenMode: 1
-  redLights:
-  - {fileID: 6144085226270285966}
-  - {fileID: 1254008541008875871}
-  - {fileID: 7815972532996919471}
-  - {fileID: 7807415736277121213}
-  blueLights:
-  - {fileID: 3648959415181859472}
-  - {fileID: 8736749851440395729}
-  - {fileID: 970979727323916167}
-  - {fileID: 9117400136372155811}
---- !u!4 &2236207230236757770 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cee13abb697226941b05accd72d72f09, type: 3}
-  m_PrefabInstance: {fileID: 1766013439145240801}
-  m_PrefabAsset: {fileID: 0}

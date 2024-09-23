@@ -179,14 +179,14 @@ public class FireFighterManager : MonoBehaviour
         SetPipeActive(isFirePipeActive);
 
     }
+    public int setEndPoint = 2;
+    public int setObjectFalse = 1;
     public void SetEquipId()
     {
-        //Debug.Log(itemManager);
         itemManager.UnequipCurrentEquipedItem(0);
         itemManager.EquipItemToEquipSlot(0, 0, Rifle);
-        MissionManager.Instance.GameElements.mapLine.GetComponent<MapLine>().endPoint = MissionManager.Instance.Missions[MissionManager.Instance.currentMissionIndex].missionDataObjectData[2].objTOActivate.gameObject;
-        MissionManager.Instance.Missions[MissionManager.Instance.currentMissionIndex].missionDataObjectData[1].objTOActivate.gameObject.SetActive(false);
-        //itemManager.EquipItemToCurrentEquipSlot(Rifle, 0);
+        MissionManager.Instance.GameElements.mapLine.GetComponent<MapLine>().endPoint = MissionManager.Instance.Missions[MissionManager.Instance.currentMissionIndex].missionDataObjectData[setEndPoint].objTOActivate.gameObject;
+        MissionManager.Instance.Missions[MissionManager.Instance.currentMissionIndex].missionDataObjectData[setObjectFalse].objTOActivate.gameObject.SetActive(false);
     }
     /// <summary>
     /// Check if the water object is active.
@@ -336,6 +336,37 @@ public class FireFighterManager : MonoBehaviour
     public void ActivateAmbulanceComponents()
     {
         ambulanceController.ActivateAmbulanceComponents();
+    }
+    public GameObject cprMachine;
+    public Canvas fireFighterCanvas;
+    public void GetThePatient()
+    {
+        if (PatientPosition.Instance.is1)
+        {
+            transform.localPosition = new Vector3(PatientPosition.Instance.pos.x, PatientPosition.Instance.pos.y, PatientPosition.Instance.pos.z);
+            transform.localRotation = Quaternion.Euler(PatientPosition.Instance.Rotate.x, PatientPosition.Instance.Rotate.y, PatientPosition.Instance.Rotate.z);
+        }
+        else if(PatientPosition.Instance.is2)
+        {
+            transform.localPosition = new Vector3(PatientPosition.Instance.pos.x, PatientPosition.Instance.pos.y, PatientPosition.Instance.pos.z);
+            transform.localRotation = Quaternion.Euler(PatientPosition.Instance.Rotate.x, PatientPosition.Instance.Rotate.y, PatientPosition.Instance.Rotate.z);
+
+        }    
+        else if(PatientPosition.Instance.is3)
+        {
+            transform.localPosition = new Vector3(PatientPosition.Instance.pos.x, PatientPosition.Instance.pos.y, PatientPosition.Instance.pos.z);
+            transform.localRotation = Quaternion.Euler(PatientPosition.Instance.Rotate.x, PatientPosition.Instance.Rotate.y, PatientPosition.Instance.Rotate.z);
+        }
+
+        ambulanceController.DeactivateThisObject();
+        cprMachine.SetActive(true);
+        gameObject.GetComponent<Animator>().SetTrigger("GiveCpr");
+    }
+    public void GetUpThePatient()
+    {
+        fireFighterCanvas.enabled = true;
+        cprMachine.SetActive(false);
+        ambulanceController.GetPatient();
     }
 
     /// <summary>

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
-  <string name="gcm_defaultSenderId" translatable="false">296793809761</string>
-  <string name="google_storage_bucket" translatable="false">testing-apk-5535f.appspot.com</string>
-  <string name="project_id" translatable="false">testing-apk-5535f</string>
-  <string name="google_api_key" translatable="false">AIzaSyAUht9pkPsnDQiTtQlZ2c0Mnt_9mO6oF5k</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAUht9pkPsnDQiTtQlZ2c0Mnt_9mO6oF5k</string>
-  <string name="google_app_id" translatable="false">1:296793809761:android:4999b5f4bacc0fe9655b20</string>
+  <string name="gcm_defaultSenderId" translatable="false">903774713897</string>
+  <string name="google_storage_bucket" translatable="false">fire-truck-driving-sim-games.appspot.com</string>
+  <string name="project_id" translatable="false">fire-truck-driving-sim-games</string>
+  <string name="google_api_key" translatable="false">AIzaSyC0zrIp-ITIN61WKq523iFmf1L4u2TBDSw</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC0zrIp-ITIN61WKq523iFmf1L4u2TBDSw</string>
+  <string name="google_app_id" translatable="false">1:903774713897:android:3442c83287036f121e8438</string>
 </resources>

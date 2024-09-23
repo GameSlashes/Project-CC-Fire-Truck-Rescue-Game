@@ -4,12 +4,19 @@ using System.Collections;
 
 public class OnTrigger : MonoBehaviour
 {
+    public static OnTrigger Instance;
     [SerializeField] private controllerDetection exitMyPlayer;
     [SerializeField] private MapLine startPoint;
     [SerializeField] private GameObject endPoint;
     [SerializeField] private bool isFun;
+    [SerializeField] private bool isPatient;
     [SerializeField] private int targetObjectIndexToActivate;
 
+
+    public void Start()
+    {
+        Instance = this;
+    }
     private void OnTriggerEnter(Collider other)
     {
         // Ensure the other object is tagged as Player
