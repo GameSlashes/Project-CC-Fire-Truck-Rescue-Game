@@ -332,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2241451738661044465}
   - component: {fileID: 2241451738661044464}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Projector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2241451738712039658}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2241451739086495040}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: All Audio Sources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2241451739210318597}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2241451740058953401}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Navigator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,7 +1363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2241451740190029814}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: NavigatorPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1490,7 @@ GameObject:
   - component: {fileID: 2241451740639869237}
   - component: {fileID: 2241451740639869243}
   - component: {fileID: 2241451740639869236}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: SportsCar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1662,7 +1662,7 @@ MonoBehaviour:
   currentWaypoint: {fileID: 0}
   nextWaypoint: {fileID: 0}
   pastWaypoint: {fileID: 0}
-  lookAhead: 0.125
+  lookAhead: 0.23
   interconnecting: 0
   willTurnLeft: 0
   willTurnRight: 0
@@ -1688,7 +1688,7 @@ MonoBehaviour:
   raycastOrder: -1
   raycastLayermask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 7864183
   raycastDistance: 3.1398492
   raycastDistanceRate: 20
   raycastHitDistance: 2.8699818
@@ -2082,7 +2082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8305516718334955973}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Wheel Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2212,7 +2212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8970304805090743572}
   - component: {fileID: 7285042475849513309}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Sports Car 2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2257,7 +2257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4554751761470711955}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Traffic Car 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

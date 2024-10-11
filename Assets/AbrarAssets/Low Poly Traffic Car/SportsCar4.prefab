@@ -1887,7 +1887,7 @@ MonoBehaviour:
   currentWaypoint: {fileID: 0}
   nextWaypoint: {fileID: 0}
   pastWaypoint: {fileID: 0}
-  lookAhead: 0.125
+  lookAhead: 0.23
   interconnecting: 0
   willTurnLeft: 0
   willTurnRight: 0
@@ -1913,7 +1913,7 @@ MonoBehaviour:
   raycastOrder: -1
   raycastLayermask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 7864183
   raycastDistance: 3.1398492
   raycastDistanceRate: 20
   raycastHitDistance: 2.8699818

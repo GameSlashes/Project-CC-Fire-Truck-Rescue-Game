@@ -14,7 +14,7 @@ public class MapLine : MonoBehaviour
     [SerializeField] private float textureSpeed = 0.5f;
     [SerializeField] private int interpolationFactor = 5; // Higher value means smoother line
 
-    private NavMeshPath navMeshPath;
+    [SerializeField] private NavMeshPath navMeshPath;
     private float textureOffset = 0;
 
     private void Awake()
@@ -31,8 +31,10 @@ public class MapLine : MonoBehaviour
 
     private void Start()
     {
-        startPoint = GameController.instance.myPlayers;
-
+        if (InGameMissionsManager.Instance != null && !InGameMissionsManager.Instance.inGameMission)
+        {
+            startPoint = GameController.instance.myPlayers;
+        }
         if (lineRenderer == null)
         {
             lineRenderer = GetComponent<LineRenderer>();

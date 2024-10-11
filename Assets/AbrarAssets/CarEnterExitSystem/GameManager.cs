@@ -9,6 +9,9 @@ public class UIElements
     public GameObject fadeManager;
     public GraphicRaycaster _DialoguePopup;
     public GameObject pausePanel;
+
+    public GameObject speedCheckObject;
+    public Text speedCheckText;
 }
 
 [System.Serializable]

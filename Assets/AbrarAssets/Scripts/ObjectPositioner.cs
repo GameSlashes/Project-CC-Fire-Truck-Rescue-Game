@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class ObjectPositioner : MonoBehaviour
 {
@@ -11,20 +12,25 @@ public class ObjectPositioner : MonoBehaviour
     public GameObject waterPipe;
     public GameObject waterGun;
     public GameObject fireExtinguisher;
+    public GameObject particals;
 
     private void Start()
     {
-        PositionObjects();
+        gameObject.GetComponentInParent<RCCP_CarController>().KillEngine();
     }
 
-    private void PositionObjects()
+    public void PositionObjects()
     {
         PositionAndParentObject(waterPipe, pipeSpawnPoint);
         PositionAndParentObject(waterGun, waterGunSpawnPoint);
         PositionAndParentObject(fireExtinguisher, fireExtinguisherSpawnPoint);
+        if (particals)
+        {
+            particals.SetActive(false);
+        }
     }
 
-    private void PositionAndParentObject(GameObject obj, Transform spawnPoint)
+    public void PositionAndParentObject(GameObject obj, Transform spawnPoint)
     {
         if (obj != null && spawnPoint != null)
         {

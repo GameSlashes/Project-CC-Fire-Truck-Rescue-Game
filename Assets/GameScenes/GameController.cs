@@ -296,17 +296,15 @@ public class GameController : MonoBehaviour
 
     public void doubleRewardBtn()
     {
-        //if (AdCalls.instance)
-        //{
-        //    AdCalls.instance.RewardVideo("2xReward");
-        //}
+        if (FindObjectOfType<Handler>())
+            FindObjectOfType<Handler>().ShowRewardedAdsBoth(doubleTheReward);
     }
 
     public void doubleTheReward()
     {
         levels[SaveData.instance.CurrentLevel].coinReward *= 2;
         levels[SaveData.instance.CurrentLevel].gemReward *= 2;
-        Game_Elements.levelCompleteReward.text = levels[SaveData.instance.CurrentLevel].coinReward.ToString();
+        //Game_Elements.levelCompleteReward.text = levels[SaveData.instance.CurrentLevel].coinReward.ToString();
         SaveData.instance.Coins += levels[SaveData.instance.CurrentLevel].coinReward / 2;
 
         Game_Elements.levelCompleteGem.text = levels[SaveData.instance.CurrentLevel].gemReward.ToString();

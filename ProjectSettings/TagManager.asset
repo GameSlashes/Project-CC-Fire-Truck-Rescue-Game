@@ -32,6 +32,10 @@ TagManager:
   - AIAction
   - water
   - Fire
+  - Marcador
+  - Blocks
+  - NormalNPC
+  - InjuredNPC
   layers:
   - Default
   - TransparentFX
@@ -39,7 +43,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Sidewalk
   - 
   - Player
   - Enemy

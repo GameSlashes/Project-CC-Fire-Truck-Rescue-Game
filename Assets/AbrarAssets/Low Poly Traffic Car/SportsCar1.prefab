@@ -1085,7 +1085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8848754161799870414}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Wheel Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138510888369477080}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 8138510888457140077}
   - component: {fileID: 8138510888457140076}
   - component: {fileID: 8138510888457140079}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: SportsCar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1362,7 +1362,7 @@ MonoBehaviour:
   currentWaypoint: {fileID: 0}
   nextWaypoint: {fileID: 0}
   pastWaypoint: {fileID: 0}
-  lookAhead: 0.125
+  lookAhead: 0.23
   interconnecting: 0
   willTurnLeft: 0
   willTurnRight: 0
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   raycastOrder: -1
   raycastLayermask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 7864183
   raycastDistance: 3.1398492
   raycastDistanceRate: 20
   raycastHitDistance: 2.8699818
@@ -1582,7 +1582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138510888610083788}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Aston Martin Vantage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2280,7 +2280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138510889504134288}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Navigator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2499,7 +2499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138510889746871883}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: NavigatorPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2530,7 +2530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138510889893816957}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2561,7 +2561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138510890065056312}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: All Audio Sources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2596,7 +2596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8138510890163892414}
   - component: {fileID: 8138510890163892415}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Projector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

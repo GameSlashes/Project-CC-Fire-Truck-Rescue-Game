@@ -117,6 +117,18 @@ public class MissionManager : MonoBehaviour
             GameElements.RescueManCompleteTick.SetActive(false);
             GameElements.fireCompleteTick.SetActive(false);
         }
+        else
+        {
+            var mission = Missions[currentMissionIndex];
+            GameElements.mapLine.GetComponent<MapLine>().endPoint =
+            mission.missionDataObjectData[0].objTOActivate.gameObject;
+            GameElements.ObjectiveText.text = mission.Objectives;
+            GameElements.ObjectiveText_1.text = mission.Objectives;
+            GameElements.CoinRewardText.text = mission.CoinReward.ToString();
+
+            GameElements.RescueManCompleteTick.SetActive(false);
+            GameElements.fireCompleteTick.SetActive(false);
+        }
         players = myCar.GetComponent<RCCP_CarController>();
         players.GetComponent<Rigidbody>().velocity = Vector3.zero;
         players.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
@@ -197,7 +209,7 @@ public class MissionManager : MonoBehaviour
     {
         if (missionConcluded) return; // Prevent both complete and failed messages
         missionConcluded = true; // Set the flag to true
-
+        InGameMissionsManager.Instance.inGameMission = false;
         Time.timeScale = 1;
         GameElements.MissionFailedText.SetActive(true);
         GameElements.mapLine.SetActive(false);
@@ -251,7 +263,7 @@ public class MissionManager : MonoBehaviour
     {
         if (missionConcluded) return; // Prevent both complete and failed messages
         missionConcluded = true; // Set the flag to true
-
+        InGameMissionsManager.Instance.inGameMission = false;
         HandleRewards();
         playBtnSound();
         GameElements.mapLine.SetActive(false);
@@ -312,7 +324,6 @@ public class MissionManager : MonoBehaviour
         ShowInterstitialAd();
         playBtnSound();
         var mission = Missions[currentMissionIndex];
-
         vThirdPersonCamera.SetActive(false);
         mission.CutScene.SetActive(true);
         Invoke(nameof(ActivateMyCameras), 10f);
@@ -334,6 +345,34 @@ public class MissionManager : MonoBehaviour
         // Log the purchased character's index
 
         Firebase.Analytics.FirebaseAnalytics.LogEvent("MissionNumber_____Accepted",new Firebase.Analytics.Parameter("Mission_index", currentMissionIndex));
+    }   
+    public void OnInGameAcceptMission()
+    {
+        Time.timeScale = 1;
+        ShowInterstitialAd();
+        playBtnSound();
+        var mission = Missions[currentMissionIndex];
+
+        vThirdPersonCamera.SetActive(false);
+        mission.CutScene.SetActive(true);
+        Invoke(nameof(ActivateMyCameras), 10f);
+
+        GameElements.MissionInitialization.SetActive(false);
+        flag = false;
+        GameElements.mapLine.SetActive(true);
+
+        GameElements.fireAmount.text = mission.fireAmount.ToString();
+        GameElements.fireAmountToDone.text = mission.fireAmountToDone.ToString();
+        GameElements.rescueManToDone.text = mission.rescueManCounterToDone.ToString();
+        GameElements.rescueMan.text = mission.rescueManCounter.ToString();
+        stopTimer.isMission = true;
+        stopTimer.myFloat = 50;
+
+        SetupMission(currentMissionIndex);
+        AudioListener.pause = false;
+        trafficCars.SetActive(false);
+
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("InGameMissionNumber_____Accepted",new Firebase.Analytics.Parameter("InGameMission_index", currentMissionIndex));
     }
     public void ActivateMyCameras()
     {
@@ -358,7 +397,7 @@ public class MissionManager : MonoBehaviour
 
     }
 
-    private void OnNextMission()
+    public void OnNextMission()
     {
         ShowInterstitialAd();
         playBtnSound();

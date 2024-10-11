@@ -12,7 +12,12 @@ public class MainMenu : MonoBehaviour
     public GameObject SettingDialogue;
     public GameObject ExitDialogue;
     //public GameObject Shop;
+    public GameObject spinWheeler;
+    public GameObject dailyReward;
+    public GameObject mainMenu;
     public Text totalCoins;
+    public GameObject playerProfiler;
+    public GameObject mainScene;
 
 
 
@@ -27,6 +32,74 @@ public class MainMenu : MonoBehaviour
         }
         Firebase.Analytics.FirebaseAnalytics.LogEvent("MainMenu_Open");
     }
+    public void ToggleSpinWheeler()
+    {
+        if (spinWheeler.activeSelf)
+        {
+            if (FindObjectOfType<Handler>())
+            {
+                FindObjectOfType<Handler>().showWaitInterstitial();
+                PlayerPrefs.SetInt("loadInterstitialAD", 5);
+                PlayerPrefs.SetInt("adShowMore", 1);
+            }
+            spinWheeler.SetActive(false);
+            mainMenu.SetActive(true);
+            Firebase.Analytics.FirebaseAnalytics.LogEvent("SpinWheeler_Close");
+        }
+        else
+        {
+            spinWheeler.SetActive(true);
+            mainMenu.SetActive(false);
+            Firebase.Analytics.FirebaseAnalytics.LogEvent("SpinWheeler_Open");
+        }
+    }
+    public void DailyRewardOpen()
+    {
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("DailyReward_Open");
+        Canvas dailyRewardCanvas = dailyReward.GetComponent<Canvas>();
+        dailyRewardCanvas.enabled = true;
+        mainScene.SetActive(false);
+    }   
+    public void ProfilerOpen()
+    {
+
+        if (!PlayerPrefs.HasKey("HasOpenedPlayerProfiler"))
+        {
+            if (FindObjectOfType<Handler>())
+            {
+                FindObjectOfType<Handler>().Hide_SmallBanner1Event();
+                FindObjectOfType<Handler>().ShowMediumBanner(GoogleMobileAds.Api.AdPosition.BottomLeft);
+            }
+            playerProfiler.SetActive(true);
+            Firebase.Analytics.FirebaseAnalytics.LogEvent("Profiler_Open");
+        }
+        else
+        {
+            playerProfiler.SetActive(false);
+        }
+
+    }  
+    public void ProfilerClose()
+    {
+        if (FindObjectOfType<Handler>())
+        {
+            FindObjectOfType<Handler>().Show_SmallBanner1();
+            FindObjectOfType<Handler>().HideMediumBannerEvent();
+        }
+
+        playerProfiler.SetActive(false);
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("Profiler_Close");
+    }   
+    public void DailyRewardClose()
+    {
+        Canvas dailyRewardCanvas = dailyReward.GetComponent<Canvas>();
+        dailyRewardCanvas.enabled = false;
+        mainScene.SetActive(true);
+        ProfilerOpen();
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("DailyReward_Close");
+    }
+
+
     void Update()
     {
         if (Application.platform == RuntimePlatform.Android)

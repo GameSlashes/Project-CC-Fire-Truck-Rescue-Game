@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: a8d2fec20550aa8428952f6bbd47c10a
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 0
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Dog Idle At 30 FPS 001(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: German_group
+      parentName: Dog Idle At 30 FPS 001(Clone)
+      position: {x: 0.0021693849, y: 0.27275988, z: -0.15244338}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: German_wilk_group
+      parentName: German_group
+      position: {x: -0.00023967742, y: 0.009690174, z: 0.12071572}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: German__SHJntGrp
+      parentName: German_wilk_group
+      position: {x: -0.0019297075, y: -0.28245005, z: 0.03172766}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: German__ROOTSHJnt
+      parentName: German__SHJntGrp
+      position: {x: 0, y: 0.37192246, z: -0.037081677}
+      rotation: {x: -0.7071068, y: 0.00000003307221, z: 0.00000003307221, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: German__Spine_01SHJnt
+      parentName: German__ROOTSHJnt
+      position: {x: -1.8350122e-19, y: 0.026771221, z: 0.10001907}
+      rotation: {x: 0.51168346, y: 0.5116835, z: -0.48803693, w: 0.48803693}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: German__Spine_02SHJnt
+      parentName: German__Spine_01SHJnt
+      position: {x: -0.09954488, y: 4.23343e-17, z: -0.018519076}
+      rotation: {x: 0.000000029802319, y: -0.02245414, z: 0.000000029802319, w: 0.9997479}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: German__Spine_03SHJnt
+      parentName: German__Spine_02SHJnt
+      position: {x: -0.0989084, y: -3.2314102e-17, z: 0.016148241}
+      rotation: {x: -0.9861668, y: 0.000000033772327, z: 0.1657567, w: -0.000000025214808}
+      scale: {x: 1.0000011, y: 1.0000012, z: 1.0000006}
+    - name: German__Spine_TopSHJnt
+      parentName: German__Spine_03SHJnt
+      position: {x: -0.10523739, y: -1.3013136e-17, z: 0.006310672}
+      rotation: {x: 0.9859683, y: -0.000000033772327, z: -0.16693288, w: -0.000000025214808}
+      scale: {x: 1.0000002, y: 0.9999998, z: 1}
+    - name: German__l_Clavicle_01_01SHJnt
+      parentName: German__Spine_TopSHJnt
+      position: {x: 1.4210854e-16, y: -0.04440676, z: 1.4210854e-16}
+      rotation: {x: 0.29981965, y: -0.29981974, z: 0.74690735, w: 0.51219696}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: German__l_FrontLeg_HipSHJnt
+      parentName: German__l_Clavicle_01_01SHJnt
+      position: {x: -0.035242412, y: 0.03655994, z: 0.0934033}
+      rotation: {x: -0.57979804, y: 0.42746836, z: 0.1595404, w: 0.6750201}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999997}
+    - name: German__l_FrontLeg_KneeSHJnt
+      parentName: German__l_FrontLeg_HipSHJnt
+      position: {x: -0.10903376, y: 4.4408918e-17, z: 7.105427e-17}
+      rotation: {x: -0.0034398113, y: 0.020113662, z: -0.004886087, w: 0.9997798}
+      scale: {x: 1.0000012, y: 1.0000011, z: 1.0000004}
+    - name: German__l_FrontLeg_AnkleSHJnt
+      parentName: German__l_FrontLeg_KneeSHJnt
+      position: {x: -0.15954696, y: 7.9936054e-17, z: -4.4408918e-17}
+      rotation: {x: -0.00006909059, y: -0.110687226, z: -0.00059607986, w: 0.9938551}
+      scale: {x: 1.0000006, y: 1.000001, z: 0.99999994}
+    - name: German__l_FrontLeg_BallSHJnt
+      parentName: German__l_FrontLeg_AnkleSHJnt
+      position: {x: -0.07654299, y: -8.881784e-18, z: 0.004163954}
+      rotation: {x: -0.00000007777987, y: 0.7071069, z: -0.00000016720291, w: 0.70710677}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000002}
+    - name: German__r_Clavicle_01_01SHJnt
+      parentName: German__Spine_TopSHJnt
+      position: {x: 1.0658141e-16, y: 0.04440676, z: 1.4210854e-16}
+      rotation: {x: -0.2998194, y: 0.29981953, z: 0.5121963, w: 0.74690807}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: German__r_FrontLeg_HipSHJnt
+      parentName: German__r_Clavicle_01_01SHJnt
+      position: {x: 0.035242412, y: 0.03655994, z: 0.0934033}
+      rotation: {x: -0.42746925, y: 0.5797979, z: 0.6750197, w: 0.15953974}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999997}
+    - name: German__r_FrontLeg_KneeSHJnt
+      parentName: German__r_FrontLeg_HipSHJnt
+      position: {x: -0.10903376, y: 1.7763568e-17, z: 0}
+      rotation: {x: 0.0034400166, y: 0.020113815, z: 0.004887012, w: 0.9997799}
+      scale: {x: 1.0000012, y: 1.0000011, z: 1.0000004}
+    - name: German__r_FrontLeg_AnkleSHJnt
+      parentName: German__r_FrontLeg_KneeSHJnt
+      position: {x: -0.15954696, y: -1.2434498e-16, z: -1.4210854e-16}
+      rotation: {x: 0.000069023765, y: -0.110687524, z: 0.0005959732, w: 0.9938551}
+      scale: {x: 1.0000006, y: 1.000001, z: 0.99999994}
+    - name: German__r_FrontLeg_BallSHJnt
+      parentName: German__r_FrontLeg_AnkleSHJnt
+      position: {x: -0.07654299, y: -8.881784e-18, z: 0.004163954}
+      rotation: {x: -0.00000007777987, y: 0.7071069, z: -0.00000016720291, w: 0.70710677}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000002}
+    - name: German__Neck_01SHJnt
+      parentName: German__Spine_TopSHJnt
+      position: {x: -0.05815067, y: 3.6179825e-17, z: -0.007640481}
+      rotation: {x: 0.000000045929248, y: -0.72766334, z: -0.000000057600552, w: 0.6859345}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999996}
+    - name: German__Neck_02SHJnt
+      parentName: German__Neck_01SHJnt
+      position: {x: -0.010001405, y: -1.5411391e-16, z: 0.05780256}
+      rotation: {x: -0.000000001936351, y: -0.0063951598, z: 0.00000003783442, w: 0.99997956}
+      scale: {x: 1.0000005, y: 1.0000004, z: 0.99999994}
+    - name: German__Neck_TopSHJnt
+      parentName: German__Neck_02SHJnt
+      position: {x: -0.0034484174, y: -1.581157e-16, z: 0.058549}
+      rotation: {x: -0.000000006695587, y: 0.03589854, z: 0.000000035506368, w: 0.9993555}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: German__Head_JawSHJnt
+      parentName: German__Neck_TopSHJnt
+      position: {x: 0.021452976, y: -2.462229e-16, z: 0.07149764}
+      rotation: {x: -0.078841805, y: -0.07884184, z: 0.7026977, w: 0.7026976}
+      scale: {x: 1, y: 0.9999997, z: 1.0000001}
+    - name: German__Head_TopSHJnt
+      parentName: German__Neck_TopSHJnt
+      position: {x: -0.07621632, y: -1.8778947e-16, z: 0.049516752}
+      rotation: {x: 0.00000002894582, y: -0.000000018626444, z: 0.7071068, w: 0.7071067}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: German__l_Eye_01SHJnt
+      parentName: German__Head_TopSHJnt
+      position: {x: -0.019703096, y: -0.0370714, z: 0.043860197}
+      rotation: {x: 0.5000001, y: 0.5, z: -0.5, w: 0.49999988}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: German__r_Eye_01SHJnt
+      parentName: German__Head_TopSHJnt
+      position: {x: 0.02988253, y: -0.0370714, z: 0.043860197}
+      rotation: {x: 0.5000001, y: 0.5, z: -0.5, w: 0.49999988}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: German__l_Ear_01SHJnt
+      parentName: German__Head_TopSHJnt
+      position: {x: -0.049450032, y: -0.0029097071, z: -0.0012729968}
+      rotation: {x: 0.43740588, y: 0.045464657, z: 0.051600795, w: 0.89663064}
+      scale: {x: 1, y: 1.0000002, z: 0.9999998}
+    - name: German__r_Ear_01SHJnt
+      parentName: German__Head_TopSHJnt
+      position: {x: 0.049450032, y: -0.0029097071, z: -0.0012729968}
+      rotation: {x: 0.007919894, y: -0.43685398, z: 0.8990488, w: 0.02840936}
+      scale: {x: 1.0000008, y: 1.0000006, z: 0.99999994}
+    - name: German__l_HindLeg_HipSHJnt
+      parentName: German__ROOTSHJnt
+      position: {x: -0.056305017, y: -0.037081666, z: -0.017622475}
+      rotation: {x: 0.44924048, y: -0.4672253, z: 0.5047077, w: 0.57022256}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1}
+    - name: German__l_HindLeg_Knee1SHJnt
+      parentName: German__l_HindLeg_HipSHJnt
+      position: {x: -0.13500346, y: -5.684342e-16, z: 3.5527136e-17}
+      rotation: {x: 0.0025790327, y: -0.45869672, z: -0.006672381, w: 0.88856405}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1}
+    - name: German__l_HindLeg_Knee2SHJnt
+      parentName: German__l_HindLeg_Knee1SHJnt
+      position: {x: -0.17613365, y: 3.5527136e-17, z: 2.1316282e-16}
+      rotation: {x: -0.000000008502406, y: 0.4167319, z: -0.000000024854115, w: 0.9090295}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000005}
+    - name: German__l_HindLeg_AnkleSHJnt
+      parentName: German__l_HindLeg_Knee2SHJnt
+      position: {x: -0.117310725, y: -2.664535e-16, z: 0}
+      rotation: {x: 0.007735808, y: 0.6830943, z: 0.04615283, w: 0.72882944}
+      scale: {x: 1, y: 1, z: 1.0000004}
+    - name: German__l_HindLeg_BallSHJnt
+      parentName: German__l_HindLeg_AnkleSHJnt
+      position: {x: -0.025937965, y: 7.105427e-17, z: 0.029508058}
+      rotation: {x: -0.0000002152098, y: 0.7071075, z: -0.00000017571034, w: 0.7071061}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000005}
+    - name: German__r_HindLeg_HipSHJnt
+      parentName: German__ROOTSHJnt
+      position: {x: 0.056305017, y: -0.037081666, z: -0.017622475}
+      rotation: {x: 0.46722543, y: -0.44924027, z: 0.57022256, w: 0.5047077}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1}
+    - name: German__r_HindLeg_Knee1SHJnt
+      parentName: German__r_HindLeg_HipSHJnt
+      position: {x: -0.13500346, y: -8.881784e-18, z: 3.5527136e-17}
+      rotation: {x: -0.0025790625, y: -0.45869675, z: 0.0066725, w: 0.8885641}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1}
+    - name: German__r_HindLeg_Knee2SHJnt
+      parentName: German__r_HindLeg_Knee1SHJnt
+      position: {x: -0.17613365, y: -5.7731595e-16, z: -1.4210854e-16}
+      rotation: {x: -0.000000008502406, y: 0.4167319, z: -0.000000024854115, w: 0.9090295}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000005}
+    - name: German__r_HindLeg_AnkleSHJnt
+      parentName: German__r_HindLeg_Knee2SHJnt
+      position: {x: -0.117310725, y: -3.2862602e-16, z: -1.4210854e-16}
+      rotation: {x: -0.007735886, y: 0.6830943, z: -0.04615301, w: 0.72882944}
+      scale: {x: 1, y: 1, z: 1.0000004}
+    - name: German__r_HindLeg_BallSHJnt
+      parentName: German__r_HindLeg_AnkleSHJnt
+      position: {x: -0.025937965, y: -1.5987211e-16, z: 0.029508058}
+      rotation: {x: -0.0000002152098, y: 0.7071075, z: -0.00000017571034, w: 0.7071061}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000005}
+    - name: German__Tail_01_01SHJnt
+      parentName: German__ROOTSHJnt
+      position: {x: -6.575433e-17, y: 0.0020635978, z: -0.05547003}
+      rotation: {x: -0.001737048, y: -0.7071047, z: 0.001737048, w: 0.7071046}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: German__Tail_01_02SHJnt
+      parentName: German__Tail_01_01SHJnt
+      position: {x: -0.07530989, y: -0.030438066, z: -1.1679895e-16}
+      rotation: {x: -0, y: -0, z: 1.1641532e-10, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: German__Tail_01_03SHJnt
+      parentName: German__Tail_01_02SHJnt
+      position: {x: -0.06437058, y: -0.042474017, z: -1.2554823e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: German__Tail_01_04SHJnt
+      parentName: German__Tail_01_03SHJnt
+      position: {x: -0.0692951, y: -0.04185845, z: -9.727925e-17}
+      rotation: {x: 0.0044714385, y: 0.15332484, z: -0.03132894, w: 0.987669}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: German__Tail_01_05SHJnt
+      parentName: German__Tail_01_04SHJnt
+      position: {x: -0.08099084, y: -0.051707495, z: -1.0658141e-16}
+      rotation: {x: -0.020461224, y: 0.096521944, z: -0.31351417, w: 0.94444364}
+      scale: {x: 1.0000005, y: 0.9999996, z: 1.0000004}
+    - name: german_SLP_MSH
+      parentName: Dog Idle At 30 FPS 001(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: german_HP_MSH1
+      parentName: Dog Idle At 30 FPS 001(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: german_LP_MSH
+      parentName: Dog Idle At 30 FPS 001(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -52,12 +52,14 @@ public class controllerDetection : MonoBehaviour
             if (controller)
             {
                 controller.GetComponentInParent<Rigidbody>().drag = 0.01f;
+                controller.GetComponentInParent<ObjectPositioner>().PositionObjects();
                 controller.GetComponentInParent<Rigidbody>().isKinematic = false;
                 controller.GetComponentInParent<RCCP_CarController>().StartEngine();
                 GameManager.instance.setController(GameManager.instance.allControllers[1]);
                 GameManager.instance.rccCamera.GetComponent<RCCP_Camera>().cameraTarget.playerVehicle = controller.GetComponentInParent<RCCP_CarController>();
                 RCCP_SceneManager.Instance.activePlayerVehicle = controller.GetComponentInParent<RCCP_CarController>();
                 MissionManager.Instance.GameElements.mapLine.GetComponent<MapLine>().startPoint = controller;
+                CreateAI.Instance.player = controller.transform;
                 MissionManager.Instance.TurnSirenOn();
             }
             coroutineManager.instance.getIn("Collectable");
