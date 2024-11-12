@@ -107,10 +107,14 @@ public class FuelSystem : MonoBehaviour
     private void RefillFuelWithAd()
     {
         var handler = FindObjectOfType<Handler>();
-        if (handler)
-        {
-            handler.ShowRewardedAdsBoth(() => Refill(refillAmount)); // Use a lambda to call Refill after ad completion
-        }
+        handler?.showWaitInterstitial();
+        PlayerPrefs.SetInt("loadInterstitialAD", 5);
+        Refill(refillAmount);
+        //var handler = FindObjectOfType<Handler>();
+        //if (handler)
+        //{
+        //    handler.ShowRewardedAdsBoth(() => Refill(refillAmount)); // Use a lambda to call Refill after ad completion
+        //}
     }
 
     // Method to refill the fuel tank

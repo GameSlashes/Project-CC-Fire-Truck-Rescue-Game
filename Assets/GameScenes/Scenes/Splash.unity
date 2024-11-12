@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.076082125, g: 0.10905331, b: 0.14494184, a: 1}
+  m_IndirectSpecularColor: {r: 0.076096125, g: 0.109077245, b: 0.14495037, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -646,6 +646,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099028476}
   m_CullTransparentMesh: 0
+--- !u!1001 &1148372712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999986, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999987, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: gameLink
+      value: https://play.google.com/store/apps/details?id=com.cc.firefigther.truck.rescue.simulator.games
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999987, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: liveVersionKey
+      value: fireTruckVersion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999987, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: versionCheckConfigKey
+      value: fireTruckBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761307945551999996, guid: a85904405a6bc5548803e304a7af46be, type: 3}
+      propertyPath: m_Name
+      value: Game Update Required
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a85904405a6bc5548803e304a7af46be, type: 3}
 --- !u!1 &1337450122
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +792,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1484853048, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: _adUnitId
-      value: ca-app-pub-6785580110510565/8915620658
+      value: ca-app-pub-3084568423114795/7147159632
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: EnableTestModeAds
@@ -735,43 +804,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.AdmobAPPID
-      value: ca-app-pub-6785580110510565~9490335723
+      value: ca-app-pub-3084568423114795~6840037872
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.Intersitial
-      value: ca-app-pub-6785580110510565/3527562609
+      value: ca-app-pub-3084568423114795/6361553971
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.RewardedInt
-      value: ca-app-pub-6785580110510565/2214480937
+      value: ca-app-pub-3084568423114795/9773322970
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.RewardedVideo
-      value: ca-app-pub-6785580110510565/8588317599
+      value: ca-app-pub-3084568423114795/3715310968
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.MediumBanner_Low_Ecpm
-      value: ca-app-pub-6785580110510565/3799025343
+      value: ca-app-pub-3084568423114795/2900792867
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.MediumBanner_Medium_Ecpm
-      value: ca-app-pub-6785580110510565/2541783990
+      value: ca-app-pub-3084568423114795/3719050516
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.Small_banners_1_Low_Ecpm
-      value: ca-app-pub-6785580110510565/2733355684
+      value: ca-app-pub-3084568423114795/5526956200
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.Small_banners_2_Low_Ecpm
-      value: ca-app-pub-6785580110510565/9051352023
+      value: ca-app-pub-3084568423114795/5028392630
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.SmallBanner_1_Medium_Ecpm
-      value: ca-app-pub-6785580110510565/5303678701
+      value: ca-app-pub-3084568423114795/3775753234
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182946, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: AndroidAdmob_ID.SmallBanner_2_Medium_Ecpm
-      value: ca-app-pub-6785580110510565/7738270357
+      value: ca-app-pub-3084568423114795/6760980971
       objectReference: {fileID: 0}
     - target: {fileID: 2214116484807182947, guid: db76a5a78e57de24da8a2166fade8ed4, type: 3}
       propertyPath: m_Name

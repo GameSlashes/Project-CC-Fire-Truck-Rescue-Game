@@ -72,6 +72,6 @@ public class TimerScriptAD : MonoBehaviour
     }
     public void afterRateUs()
     {
-        myFloat = 30;
+        myFloat = 40;
     }
 }
